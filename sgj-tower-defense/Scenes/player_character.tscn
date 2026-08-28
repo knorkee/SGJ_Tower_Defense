@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cvhjs400oatwv" path="res://Scenes/projectile.tscn" id="2_o0f8b"]
 [ext_resource type="Texture2D" uid="uid://b6vihxa2srwhm" path="res://Assets/player/player_S_F_0.png" id="3_o0f8b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oigcr"]
-size = Vector2(16, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o0f8b"]
+radius = 4.0
+height = 14.0
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 groups=["player"]]
 script = ExtResource("1_cmdk4")
@@ -17,4 +18,6 @@ position = Vector2(0, -3)
 texture = ExtResource("3_o0f8b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335628379]
-shape = SubResource("RectangleShape2D_oigcr")
+position = Vector2(0, -2)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_o0f8b")
