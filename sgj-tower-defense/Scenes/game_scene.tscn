@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://ccpeuwws48ar"]
 
 [ext_resource type="PackedScene" uid="uid://bqkg3w4ykeeeg" path="res://Scenes/player_character.tscn" id="1_x87qo"]
+[ext_resource type="PackedScene" uid="uid://cvhjs400oatwv" path="res://Scenes/projectile.tscn" id="2_b6fju"]
 
 [node name="GameScene" type="Node2D" unique_id=388441636]
 
 [node name="PlayerCharacter" parent="." unique_id=929913682 instance=ExtResource("1_x87qo")]
 position = Vector2(321, 157)
+
+[node name="Projectile" parent="." unique_id=1400300146 instance=ExtResource("2_b6fju")]
+position = Vector2(350, 153)

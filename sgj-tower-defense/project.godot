@@ -22,6 +22,12 @@ window/size/viewport_height=360
 window/size/mode=2
 window/stretch/mode="viewport"
 
+[global_group]
+
+player=""
+enemy=""
+projectile=""
+
 [input]
 
 move_up={
