@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cvhjs400oatwv"]
 
 [ext_resource type="Script" uid="uid://baikii6clhmvs" path="res://Scenes/projectile.gd" id="1_f8cdk"]
+[ext_resource type="Texture2D" uid="uid://b6vihxa2srwhm" path="res://Assets/player/player_S_F_0.png" id="2_yr2qt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_at5ip"]
 radius = 3.1622777
@@ -10,5 +11,10 @@ script = ExtResource("1_f8cdk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1420307568]
 shape = SubResource("CircleShape2D_at5ip")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=815321927]
+texture_filter = 1
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_yr2qt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
