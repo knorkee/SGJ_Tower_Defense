@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxb12"]
 
-[node name="enemy" type="CharacterBody2D" unique_id=1226550910]
+[node name="enemy" type="CharacterBody2D" unique_id=1226550910 groups=["enemy"]]
 script = ExtResource("1_2u673")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2020377954]

@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var speed = 2
 
-var projectile_cooldown : float = 1
+var projectile_cooldown : float = 0.3
 var projectile_cd_counter : float = 0
 
 # Called when the node enters the scene tree for the first time.

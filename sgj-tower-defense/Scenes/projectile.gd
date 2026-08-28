@@ -2,7 +2,7 @@ extends Area2D
 
 var projectile_direction: Vector2
 
-var speed = 3
+var speed = 5
 var spawn_point
 
 # Called when the node enters the scene tree for the first time.
@@ -28,3 +28,4 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("enemy")):
 		body.queue_free() # for bnow this just deletes the enemy -- add damage later
+		queue_free() # delete this projectile
