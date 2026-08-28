@@ -2,38 +2,32 @@
 
 [ext_resource type="PackedScene" uid="uid://dhig5mk27sam3" path="res://Scenes/momi_character.tscn" id="1_6h5vk"]
 [ext_resource type="PackedScene" uid="uid://bqkg3w4ykeeeg" path="res://Scenes/player_character.tscn" id="1_x87qo"]
-[ext_resource type="PackedScene" uid="uid://cd461cfm015yh" path="res://Scenes/enemy_character_sprite.tscn" id="2_1ixah"]
 [ext_resource type="PackedScene" uid="uid://docs5nmbr8sfn" path="res://Scenes/enemy_spawner.tscn" id="2_fiftr"]
 
 [node name="GameScene" type="Node2D" unique_id=388441636]
 
 [node name="enemy_spawner" parent="." unique_id=2011223721 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(63, 35)
-enemy_prefab = ExtResource("2_1ixah")
 Target = NodePath("../momi_character")
 Player = NodePath("../PlayerCharacter")
 
 [node name="enemy_spawner2" parent="." unique_id=1687482148 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(126, 70)
-enemy_prefab = ExtResource("2_1ixah")
 Target = NodePath("../momi_character")
 Player = NodePath("../PlayerCharacter")
 
 [node name="enemy_spawner3" parent="." unique_id=139538728 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(313, 31)
-enemy_prefab = ExtResource("2_1ixah")
 Target = NodePath("../momi_character")
 Player = NodePath("../PlayerCharacter")
 
 [node name="enemy_spawner4" parent="." unique_id=631438929 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(503, 74)
-enemy_prefab = ExtResource("2_1ixah")
 Target = NodePath("../momi_character")
 Player = NodePath("../PlayerCharacter")
 
 [node name="enemy_spawner5" parent="." unique_id=805077456 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(577, 34)
-enemy_prefab = ExtResource("2_1ixah")
 Target = NodePath("../momi_character")
 Player = NodePath("../PlayerCharacter")
 

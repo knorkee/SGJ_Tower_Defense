@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bcm3tok77d1hn"]
+
+[ext_resource type="Script" uid="uid://bpinqw8y1ktii" path="res://Scenes/ao_e_attack.gd" id="1_bkfvh"]
+[ext_resource type="Texture2D" uid="uid://dvqokq7vbaevq" path="res://Assets/AoE_Attack/temp_asset.png" id="1_dcjl6"]
+[ext_resource type="Texture2D" uid="uid://htxjjkuulslq" path="res://Assets/AoE_Attack/temp_indicator.png" id="3_hy5fw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dls4w"]
+radius = 28.0
+
+[node name="AoE_Attack" type="Node2D" unique_id=1715646290]
+script = ExtResource("1_bkfvh")
+
+[node name="preview" type="Sprite2D" parent="." unique_id=612523782]
+texture = ExtResource("1_dcjl6")
+
+[node name="attack_area" type="Sprite2D" parent="." unique_id=3440191]
+visible = false
+texture = ExtResource("3_hy5fw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=490912035]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=547948833]
+shape = SubResource("CircleShape2D_dls4w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
