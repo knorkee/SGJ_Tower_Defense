@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cd461cfm015yh"]
 
 [ext_resource type="Script" uid="uid://rmn2gguwqj34" path="res://Scenes/enemy_character.gd" id="1_2u673"]
+[ext_resource type="Texture2D" uid="uid://c8ksqr0xtb1ub" path="res://Assets/Faceset.png" id="2_2u673"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxb12"]
 
@@ -10,4 +11,5 @@ script = ExtResource("1_2u673")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2020377954]
 shape = SubResource("CapsuleShape2D_kxb12")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=432587724]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=165452194]
+texture = ExtResource("2_2u673")
