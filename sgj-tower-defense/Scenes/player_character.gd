@@ -18,6 +18,9 @@ func _process(delta: float) -> void:
 	
 	if(Input.is_action_pressed("attack_button")):
 		attack()
+	
+	if (Input.is_action_pressed("EndGame")):
+		get_tree().quit()
 
 func attack() -> void:
 	if (projectile_cd_counter > 0):

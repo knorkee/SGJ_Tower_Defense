@@ -15,4 +15,4 @@ position = Vector2(63, 35)
 Target = NodePath("../momi_character")
 
 [node name="PlayerCharacter" parent="." unique_id=689404722 instance=ExtResource("1_x87qo")]
-position = Vector2(321, 157)
+position = Vector2(303, 169)
