@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bqkg3w4ykeeeg"]
+
+[ext_resource type="Texture2D" uid="uid://cayd7c66gh7yq" path="res://Assets/character_green_front.png" id="1_qcwfp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcwfp"]
+height = 26.0
+
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1959504882]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qcwfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335628379]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_qcwfp")
