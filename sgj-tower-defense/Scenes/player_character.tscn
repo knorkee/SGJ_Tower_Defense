@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cbx8oi7yyds7g" path="res://Scenes/player_character.gd" id="1_cmdk4"]
 [ext_resource type="Texture2D" uid="uid://cayd7c66gh7yq" path="res://Assets/character_green_front.png" id="1_qcwfp"]
+[ext_resource type="PackedScene" uid="uid://cvhjs400oatwv" path="res://Scenes/projectile.tscn" id="2_o0f8b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oigcr"]
 size = Vector2(16, 16)
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682]
 script = ExtResource("1_cmdk4")
+ProjectileScene = ExtResource("2_o0f8b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1959504882]
 texture_filter = 1
