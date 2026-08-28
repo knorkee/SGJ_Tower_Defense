@@ -27,5 +27,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("enemy")):
-		body.queue_free() # for bnow this just deletes the enemy -- add damage later
+		
+		#body.queue_free() # for bnow this just deletes the enemy -- add damage later
+		var health = body.get_node("healthComponent")
+		if (health != null):
+			health.deal_damage(100)
+		
 		queue_free() # delete this projectile
