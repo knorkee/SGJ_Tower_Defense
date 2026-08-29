@@ -2,6 +2,8 @@ extends Node2D
 @onready var enemy_spawner_right: Node2D = $enemy_spawner_right
 @onready var enemy_spawner_left: Node2D = $enemy_spawner_left
 @onready var enemy_spawner_top: Node2D = $enemy_spawner_top
+@onready var next_wave_button: Control = $NextWaveButton
+
 var enemyCounter: int
 var waveCounter: int = 1
 var spawnerCounter: int = 0
@@ -10,8 +12,10 @@ var game_lost: bool = false
 var game_won: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	enemyCounter = waveCounter * 10
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	_prepareEnemies()
+	next_wave_button.visible = false
+func _prepareEnemies() -> void:
+	enemyCounter = waveCounter * 10	
 func _process(delta: float) -> void:
 	if(enemies == 0 && enemyCounter == 0):
 		game_won = true
@@ -19,9 +23,18 @@ func _process(delta: float) -> void:
 		await sleep(2.0)
 		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	if(game_won):
-		print("winner")
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-
+		next_wave_button.visible = true
+		#_spawnWaveButton()
+		#_start_next_wave()
+#func _spawnWaveButton() -> void:
+#	var button = NextWaveButtonPrefab.instantiate()
+#button.position = Vector2(320,170)
+#	add_child(button)
+func _start_next_wave() -> void:
+	waveCounter +=1
+	_prepareEnemies()
+	game_won = false
+	
 func sleep(seconds: float)->void:
 	await get_tree().create_timer(seconds).timeout
 func _generate_random_number() -> int:
@@ -44,3 +57,8 @@ func _on_timer_timeout() -> void:
 				enemy_spawner_right._spawnEnemy()
 				print("spawn right")
 			print(enemyCounter)
+
+
+func _on_next_wave_button_pressed() -> void:
+	_start_next_wave()
+	next_wave_button.visible = false
