@@ -38,7 +38,6 @@ script = null
 position = Vector2(321, 157)
 
 [node name="Timer" type="Timer" parent="." unique_id=2058833301]
-wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

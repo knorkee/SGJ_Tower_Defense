@@ -13,7 +13,8 @@ func _physics_process(delta):
 	if(!is_following):
 		_move(target)
 	else:
-		_move(target_player)
+		var player = get_tree().get_first_node_in_group("player")
+		_move(player.position)
 	#if(!is_following):
 		#var direction = target - global_position
 		# var direction = Vector2.DOWN
