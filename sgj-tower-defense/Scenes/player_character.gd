@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var ProjectileScene: PackedScene
 
-var speed = 2
+var speed = 1
 
 var projectile_cooldown : float = 0.3
 var projectile_cd_counter : float = 0
@@ -44,12 +44,16 @@ func _physics_process(delta: float) -> void:
 	
 	# get mvoement direction here
 	if(Input.is_action_pressed("move_up")):
+		animated_sprite.play("player_walk")
 		direction.y = -1
 	if(Input.is_action_pressed("move_down")):
+		animated_sprite.play("player_walk")
 		direction.y = 1
 	if(Input.is_action_pressed("move_right")):
+		animated_sprite.play("player_walk")
 		direction.x = 1
 	if(Input.is_action_pressed("move_left")):
+		animated_sprite.play("player_walk")
 		direction.x = -1
 		
 	
