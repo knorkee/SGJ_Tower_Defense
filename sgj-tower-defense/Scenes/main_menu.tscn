@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="1_28flt"]
 [ext_resource type="Script" uid="uid://b8f2w5xiwcofb" path="res://Scenes/main_menu.gd" id="1_48xlc"]
+[ext_resource type="AudioStream" uid="uid://f2yjiq42qlb2" path="res://Assets/music/main_menu.wav" id="3_1ehe0"]
 
 [node name="Main Menu" type="Node2D" unique_id=1739704012]
 script = ExtResource("1_48xlc")
@@ -39,6 +40,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_28flt")
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1037528080]
+stream = ExtResource("3_1ehe0")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
