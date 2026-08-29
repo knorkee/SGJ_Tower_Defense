@@ -3,21 +3,100 @@
 [ext_resource type="Script" uid="uid://cbx8oi7yyds7g" path="res://Scenes/player_character.gd" id="1_cmdk4"]
 [ext_resource type="PackedScene" uid="uid://cvhjs400oatwv" path="res://Scenes/projectile.tscn" id="2_o0f8b"]
 [ext_resource type="Texture2D" uid="uid://b6vihxa2srwhm" path="res://Assets/player/player_S_F_0.png" id="3_o0f8b"]
+[ext_resource type="Texture2D" uid="uid://jdaxubwlc5yj" path="res://Assets/player/Player_attack/player_atck_F0000.png" id="4_a1rxb"]
+[ext_resource type="Texture2D" uid="uid://d2v0v4uk1fbgl" path="res://Assets/player/Player_attack/player_atck_F0001.png" id="5_i0ilm"]
+[ext_resource type="Texture2D" uid="uid://bwad06qop0yja" path="res://Assets/player/Player_attack/player_atck_F0002.png" id="6_xeb05"]
+[ext_resource type="Texture2D" uid="uid://bby52soqosimq" path="res://Assets/player/Player_attack/player_atck_F0003.png" id="7_8u1ju"]
+[ext_resource type="Texture2D" uid="uid://koy7lel4llc5" path="res://Assets/player/Player_attack/player_atck_F0004.png" id="8_2s815"]
+[ext_resource type="Texture2D" uid="uid://5gfqeiamb1xw" path="res://Assets/player/Player_attack/player_atck_F0005.png" id="9_m3sir"]
+[ext_resource type="Texture2D" uid="uid://ba2wu867tme4p" path="res://Assets/player/Player_attack/player_atck_F0006.png" id="10_v0dhu"]
+[ext_resource type="Texture2D" uid="uid://bx75hkwpobpwa" path="res://Assets/player/Player_attack/player_atck_F0007.png" id="11_bdrer"]
+[ext_resource type="Texture2D" uid="uid://bxxtfchsmy4kg" path="res://Assets/player/Player_attack/player_atck_F0008.png" id="12_w6p7y"]
+[ext_resource type="Texture2D" uid="uid://cmy8mhu31rel5" path="res://Assets/player/Player_attack/player_atck_F0009.png" id="13_e05f7"]
+[ext_resource type="Texture2D" uid="uid://1ol5dkds66ig" path="res://Assets/player/Player_attack/player_atck_F0010.png" id="14_j5y83"]
+[ext_resource type="Texture2D" uid="uid://gyuiwmh0fvgq" path="res://Assets/player/Player_attack/player_atck_F0011.png" id="15_ck4qn"]
+[ext_resource type="Texture2D" uid="uid://u8bfap8wcfty" path="res://Assets/player/Player_attack/player_atck_F0012.png" id="16_uchij"]
+[ext_resource type="Texture2D" uid="uid://n254dclqdpij" path="res://Assets/player/Player_attack/player_atck_F0013.png" id="17_0oa0h"]
+[ext_resource type="Texture2D" uid="uid://b1wlao8xj2fpc" path="res://Assets/player/Player_attack/player_atck_F0014.png" id="18_wfjhv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o0f8b"]
 radius = 4.0
 height = 14.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkquq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o0f8b")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a1rxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i0ilm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xeb05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8u1ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2s815")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_m3sir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v0dhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bdrer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_w6p7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e05f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_j5y83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ck4qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uchij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0oa0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wfjhv")
+}],
+"loop": 0,
+"name": &"player_attack",
+"speed": 20.0
+}]
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 groups=["player"]]
 script = ExtResource("1_cmdk4")
 ProjectileScene = ExtResource("2_o0f8b")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1959504882]
-texture_filter = 1
-position = Vector2(0, -3)
-texture = ExtResource("3_o0f8b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335628379]
 position = Vector2(0, -2)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_o0f8b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=108506611]
+texture_filter = 1
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_pkquq")
+animation = &"player_attack"
+frame = 14
+frame_progress = 1.0

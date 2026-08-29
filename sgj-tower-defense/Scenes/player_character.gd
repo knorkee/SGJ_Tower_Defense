@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var ProjectileScene: PackedScene
 
@@ -17,12 +18,13 @@ func _process(delta: float) -> void:
 	cooldowns(delta)
 	
 	if(Input.is_action_pressed("attack_button")):
+		animated_sprite.play("player_attack")
 		attack()
 	
 	if (Input.is_action_pressed("EndGame")):
 		get_tree().quit()
 
-func attack() -> void:
+func attack() -> void: #can u pls make it so attack can only happen every 20 frames, so it matches the animation?
 	if (projectile_cd_counter > 0):
 		return
 	
