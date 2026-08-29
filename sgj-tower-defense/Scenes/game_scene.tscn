@@ -37,11 +37,12 @@ max_x = 300
 max_y = 70
 
 [node name="momi_character" parent="." unique_id=929913682 instance=ExtResource("1_6h5vk")]
-position = Vector2(319, 348)
+position = Vector2(318, 306)
 script = null
 
 [node name="PlayerCharacter" parent="." unique_id=689404722 instance=ExtResource("1_x87qo")]
 position = Vector2(321, 157)
+scale = Vector2(2, 2)
 
 [node name="Timer" type="Timer" parent="." unique_id=2058833301]
 autostart = true

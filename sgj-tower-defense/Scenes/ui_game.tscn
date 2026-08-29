@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://df56tmpdul6di" path="res://Assets/ui/health_bar/health_bar_bg.png" id="2_1tdhr"]
 [ext_resource type="Texture2D" uid="uid://hwxmlydqncfn" path="res://Assets/ui/health_bar/health_bar_overlay.png" id="3_fmrx5"]
 [ext_resource type="Texture2D" uid="uid://tp3xdwbgmcrx" path="res://Assets/ui/health_bar/health_bar_progress.png" id="4_qm20r"]
+[ext_resource type="Texture2D" uid="uid://b6f3iui3eoqvi" path="res://Assets/ui/mom_heart.png" id="5_1tdhr"]
 
 [node name="ui_game" type="Control" unique_id=1721979517]
 layout_mode = 3
@@ -65,3 +66,13 @@ value = 40.0
 texture_under = ExtResource("2_1tdhr")
 texture_over = ExtResource("3_fmrx5")
 texture_progress = ExtResource("4_qm20r")
+
+[node name="TextureRect" type="TextureRect" parent="box/line_bottom" unique_id=1499663790]
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("5_1tdhr")
+
+[node name="Explode_ Ready" type="Label" parent="box/line_bottom" unique_id=1609549599]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "Explode: Ready"
