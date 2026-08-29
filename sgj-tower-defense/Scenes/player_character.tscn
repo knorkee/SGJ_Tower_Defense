@@ -41,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_o0f8b")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -91,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_wfjhv")
 }],
-"loop": 0,
+"loop": false,
 "name": &"player_attack",
 "speed": 20.0
 }, {
@@ -123,7 +123,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_nu5ed")
 }],
-"loop": 0,
+"loop": false,
 "name": &"player_walk",
 "speed": 15.0
 }]

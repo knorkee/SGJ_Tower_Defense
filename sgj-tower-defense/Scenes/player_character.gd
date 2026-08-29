@@ -92,13 +92,11 @@ func inputs():
 	if (Input.is_action_just_pressed("ability_1")): # aoe pressed = preview
 		
 		if (aoe_cd_counter <= 0):
-			
 			aoe_preview_active = true
 			aoe_attack = AoE_Attack_Scene.instantiate()
-			aoe_attack.position = global_position
-			aoe_attack.damage = 50 # set damage to be dealt
+			aoe_attack.damage = 100 # set damage to be dealt
 			get_tree().current_scene.add_child(aoe_attack)
-		
+	
 	if (Input.is_action_just_released("ability_1")): # aoe released = activated
 		
 		if (aoe_preview_active):

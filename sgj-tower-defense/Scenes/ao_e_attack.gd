@@ -1,12 +1,12 @@
 extends Node2D
 
-var preview_active : bool = true
+var player : Node2D
 
+var preview_active : bool = true
 var alive_counter : float = 0.2
 
 var damage : int
-
-var player : Node2D
+var range : float = 130
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +25,19 @@ func _process(delta: float) -> void:
 		attack_deployed(delta)
 
 func follow_mouse():
-	global_position = get_global_mouse_position()
+	
+	var mouse_pos = get_global_mouse_position()
+	
+	var distance = (mouse_pos - player.position)
+	
+	# mouse is in ability range
+	if (distance.length() <= range):
+		global_position = get_global_mouse_position()
+		return
+	
+	# show preview on max range
+	var direction = distance.normalized()
+	global_position = player.position + (direction * range)
 
 func attack_deployed(delta:float):
 	alive_counter -= delta
