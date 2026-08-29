@@ -21,7 +21,7 @@ func _physics_process(delta):
 		var distance_to_player = vector_to_player.length()
 		if(distance_to_player < 20):
 			cooldowns(delta)
-			_attack()
+			_attack(player)
 		else:
 			_move(player.position)
 	#if(!is_following):
@@ -34,9 +34,11 @@ func _move(target: Vector2) -> void:
 	var direction = target - global_position
 	direction = direction.normalized()
 	position = position + direction
-func _attack() -> void:
+func _attack(player: Node2D) -> void:
 	if (enemy_attack_counter > 0):
 		return
+	var health_comp = player.get_node("healthComponent")
+	health_comp.deal_damage(20)
 	print("attack")
 	enemy_attack_counter = enemy_attack_cooldown
 func _on_area_2d_body_entered(body: Node2D) -> void:

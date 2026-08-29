@@ -14,5 +14,5 @@ func _process(delta: float) -> void:
 
 func deal_damage(damage: int) -> void:
 	Health -= damage
-	if (Health >= 0):
+	if (Health <= 0):
 		get_parent().queue_free()
