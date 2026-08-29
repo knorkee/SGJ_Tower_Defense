@@ -1,11 +1,12 @@
 extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var particle_shoot: CPUParticles2D = $particle_shoot
 
 
 @export var ProjectileScene: PackedScene
 @export var AoE_Attack_Scene: PackedScene
 @export var Health_Component: HealthComponent
+@export var particle_shootScene: PackedScene
+
 var gameScene
 
 var speed = 1
@@ -40,6 +41,11 @@ func attack() -> void: #can u pls make it so attack can only happen every 20 fra
 	
 	var mouse_dir = (get_global_mouse_position() - global_position).normalized()
 	projectile.initialize(mouse_dir, global_position)
+	
+	
+	var particle = particle_shootScene.instantiate()
+	get_tree().current_scene.add_child(particle)
+	particle.initialize(get_global_mouse_position(), global_position)
 	
 	#reset cooldown
 	projectile_cd_counter = projectile_cooldown
@@ -84,8 +90,6 @@ func inputs():
 	# auto attack
 	if(Input.is_action_pressed("attack_button")):
 		animated_sprite.play("player_attack")
-		particle_shoot.look_at(get_global_mouse_position())
-		particle_shoot.emitting = true
 		attack()
 	
 	# AoE ability

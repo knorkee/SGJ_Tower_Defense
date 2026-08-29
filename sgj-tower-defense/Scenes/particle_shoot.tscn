@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ccgou0v81tb2q"]
 
+[ext_resource type="Script" uid="uid://bbwjvrae1sksd" path="res://Scenes/particle_shoot.gd" id="1_jqsuh"]
+
 [sub_resource type="Curve" id="Curve_1n0di"]
 _data = [Vector2(0.042553194, 0.9887641), 0.0, 0.0, 0, 0, Vector2(0.9308511, 0.24719107), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -17,3 +19,4 @@ damping_max = 9.901
 scale_amount_min = 2.0
 scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_1n0di")
+script = ExtResource("1_jqsuh")

@@ -41,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_o0f8b")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -91,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_wfjhv")
 }],
-"loop": false,
+"loop": 0,
 "name": &"player_attack",
 "speed": 20.0
 }, {
@@ -123,20 +123,17 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_nu5ed")
 }],
-"loop": false,
+"loop": 0,
 "name": &"player_walk",
 "speed": 15.0
 }]
-
-[sub_resource type="Curve" id="Curve_1n0di"]
-_data = [Vector2(0.042553194, 0.9887641), 0.0, 0.0, 0, 0, Vector2(0.9308511, 0.24719107), 0.0, 0.0, 0, 0]
-point_count = 2
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 node_paths=PackedStringArray("Health_Component") groups=["player"]]
 script = ExtResource("1_cmdk4")
 ProjectileScene = ExtResource("2_o0f8b")
 AoE_Attack_Scene = ExtResource("3_ck4qn")
 Health_Component = NodePath("HealthComponent")
+particle_shootScene = ExtResource("30_uchij")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1053495018]
 script = ExtResource("28_j5y83")
@@ -152,7 +149,3 @@ texture_filter = 1
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_pkquq")
 animation = &"player_walk"
-
-[node name="particle_shoot" parent="." unique_id=1529036765 instance=ExtResource("30_uchij")]
-position = Vector2(1, 1)
-scale_amount_curve = SubResource("Curve_1n0di")
