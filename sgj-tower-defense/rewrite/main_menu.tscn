@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dbfoe4g1qncr5"]
+
+[ext_resource type="Theme" uid="uid://bcpg4rn748f1b" path="res://rewrite/theme.tres" id="1_s6qfv"]
+[ext_resource type="Script" uid="uid://br2gj307i7260" path="res://rewrite/main_menu.gd" id="2_pmmmy"]
+
+[node name="main_menu" type="Control" unique_id=720071123]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s6qfv")
+script = ExtResource("2_pmmmy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1916094415]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1714831226]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Once upon a Slime"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=29909391]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=85750901]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Start "
+
+[node name="credit" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=498569221]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Credit"
+
+[node name="exit" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1810214219]
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Exit"

@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://bcpg4rn748f1b"]
+
+[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="1_la520"]
+
+[resource]
+default_font = ExtResource("1_la520")
