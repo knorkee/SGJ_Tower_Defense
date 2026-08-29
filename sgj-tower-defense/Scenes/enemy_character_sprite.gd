@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 # var SPEED: int = 1 * 10000
 var target: Vector2 = Vector2.ZERO
 var target_mom: Vector2 = Vector2.ZERO
