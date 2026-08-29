@@ -37,7 +37,7 @@ max_x = 300
 max_y = 70
 
 [node name="momi_character" parent="." unique_id=929913682 instance=ExtResource("1_6h5vk")]
-position = Vector2(318, 306)
+position = Vector2(320, 306)
 script = null
 
 [node name="PlayerCharacter" parent="." unique_id=689404722 instance=ExtResource("1_x87qo")]

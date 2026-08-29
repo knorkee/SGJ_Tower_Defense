@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var ProjectileScene: PackedScene
 @export var AoE_Attack_Scene: PackedScene
+var gameScene
 
 var speed = 1
 
@@ -13,6 +14,8 @@ var aoe_attack : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	gameScene = get_tree().get_first_node_in_group("gameScene")
+
 	pass # Replace with function body.
 
 
@@ -39,24 +42,24 @@ func attack() -> void: #can u pls make it so attack can only happen every 20 fra
 func _physics_process(delta: float) -> void:
 	
 	var direction = Vector2.ZERO
-	
-	# get mvoement direction here
-	if(Input.is_action_pressed("move_up")):
-		animated_sprite.play("player_walk")
-		direction.y = -1
-	if(Input.is_action_pressed("move_down")):
-		animated_sprite.play("player_walk")
-		direction.y = 1
-	if(Input.is_action_pressed("move_right")):
-		animated_sprite.play("player_walk")
-		direction.x = 1
-	if(Input.is_action_pressed("move_left")):
-		animated_sprite.play("player_walk")
-		direction.x = -1
+	if(!gameScene.game_lost):
+		# get mvoement direction here
+		if(Input.is_action_pressed("move_up")):
+			animated_sprite.play("player_walk")
+			direction.y = -1
+		if(Input.is_action_pressed("move_down")):
+			animated_sprite.play("player_walk")
+			direction.y = 1
+		if(Input.is_action_pressed("move_right")):
+			animated_sprite.play("player_walk")
+			direction.x = 1
+		if(Input.is_action_pressed("move_left")):
+			animated_sprite.play("player_walk")
+			direction.x = -1
+			
 		
-	
-	velocity = direction * speed * delta * 10000
-	move_and_slide()
+		velocity = direction * speed * delta * 10000
+		move_and_slide()
 
 
 func cooldowns(delta: float):
@@ -65,19 +68,20 @@ func cooldowns(delta: float):
 
 
 func inputs():
-	
-	# auto attack
-	if(Input.is_action_pressed("attack_button")):
-		animated_sprite.play("player_attack")
-		attack()
-	
-	# AoE ability
-	if (Input.is_action_just_pressed("ability_1")):
+	if(!gameScene.game_lost):
+
+		# auto attack
+		if(Input.is_action_pressed("attack_button")):
+			animated_sprite.play("player_attack")
+			attack()
 		
-		aoe_attack = AoE_Attack_Scene.instantiate()
-		aoe_attack.position = global_position
-		aoe_attack.damage = 50 # set damage to be dealt
-		get_tree().current_scene.add_child(aoe_attack)
-	
-	if (Input.is_action_just_released("ability_1")):
-		aoe_attack.activate_attack()
+		# AoE ability
+		if (Input.is_action_just_pressed("ability_1")):
+			
+			aoe_attack = AoE_Attack_Scene.instantiate()
+			aoe_attack.position = global_position
+			aoe_attack.damage = 50 # set damage to be dealt
+			get_tree().current_scene.add_child(aoe_attack)
+		
+		if (Input.is_action_just_released("ability_1")):
+			aoe_attack.activate_attack()

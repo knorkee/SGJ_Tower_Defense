@@ -92,7 +92,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 groups=["mommy"]]
 scale = Vector2(2, 2)
 script = SubResource("GDScript_qcwfp")
 

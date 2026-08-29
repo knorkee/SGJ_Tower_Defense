@@ -6,24 +6,33 @@ var target_player: Vector2 = Vector2.ZERO
 var is_following: bool = false
 var enemy_attack_cooldown : float = 1
 var enemy_attack_counter : float = 0
-
-#enemys laufen auf mutter schleim
-#wenn player im radius auf player angreifen
-#TODO Spawner, Angreiffen, angegriffen werden
-
+var mommy
+var gameScene
+func _ready():
+	mommy = get_tree().get_first_node_in_group("mommy")
+	gameScene = get_tree().get_first_node_in_group("gameScene")
 func _physics_process(delta):
-	if(!is_following):
-		_move(target)
-	else:
-		
-		var player = get_tree().get_first_node_in_group("player")
-		var vector_to_player = player.position - global_position
-		var distance_to_player = vector_to_player.length()
-		if(distance_to_player < 20):
-			cooldowns(delta)
-			_attack(player)
+	if(mommy != null):
+		if(!is_following):
+			var vector_to_mommy = mommy.position - global_position
+			var distance_to_mommy = vector_to_mommy.length()
+			if(distance_to_mommy < 20):
+				print("bin bei mama")
+				cooldowns(delta)
+				_attack(mommy)
+			else:
+				_move(target)
 		else:
-			_move(player.position)
+			var player = get_tree().get_first_node_in_group("player")
+			var vector_to_player = player.position - global_position
+			var distance_to_player = vector_to_player.length()
+			if(distance_to_player < 20):
+				cooldowns(delta)
+				_attack(player)
+			else:
+				_move(player.position)
+	else:
+		gameScene.game_lost = true
 	#if(!is_following):
 		#var direction = target - global_position
 		# var direction = Vector2.DOWN
