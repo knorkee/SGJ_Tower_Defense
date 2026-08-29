@@ -11,9 +11,15 @@ func _generate_random_pos(min_x,max_x,min_y,max_y):
 	var x = rng.randi_range(min_x, max_x)
 	var y = rng.randi_range(min_y, max_y)
 	return Vector2(x,y)
-
-func _on_timer_timeout() -> void:
+func _spawnEnemy() -> void:
 	var enemy = enemy_prefab.instantiate()
 	add_child(enemy)
 	enemy.target = Target.global_position
 	enemy.position = _generate_random_pos(min_x,max_x,min_y,max_y)
+
+'func _on_timer_timeout() -> void:
+	var enemy = enemy_prefab.instantiate()
+	add_child(enemy)
+	enemy.target = Target.global_position
+	enemy.position = _generate_random_pos(min_x,max_x,min_y,max_y)
+'

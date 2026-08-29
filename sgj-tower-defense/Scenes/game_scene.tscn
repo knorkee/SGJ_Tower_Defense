@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://ccpeuwws48ar"]
 
 [ext_resource type="PackedScene" uid="uid://dhig5mk27sam3" path="res://Scenes/momi_character.tscn" id="1_6h5vk"]
+[ext_resource type="Script" uid="uid://bv8gyq4myw1va" path="res://Scenes/game_scene.gd" id="1_fiftr"]
 [ext_resource type="PackedScene" uid="uid://bqkg3w4ykeeeg" path="res://Scenes/player_character.tscn" id="1_x87qo"]
 [ext_resource type="PackedScene" uid="uid://docs5nmbr8sfn" path="res://Scenes/enemy_spawner.tscn" id="2_fiftr"]
 
 [node name="GameScene" type="Node2D" unique_id=388441636]
+script = ExtResource("1_fiftr")
 
 [node name="enemy_spawner_right" parent="." unique_id=1687482148 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(728, 5)
@@ -34,3 +36,9 @@ script = null
 
 [node name="PlayerCharacter" parent="." unique_id=689404722 instance=ExtResource("1_x87qo")]
 position = Vector2(321, 157)
+
+[node name="Timer" type="Timer" parent="." unique_id=2058833301]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
