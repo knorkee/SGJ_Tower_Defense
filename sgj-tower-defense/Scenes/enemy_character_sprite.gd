@@ -4,6 +4,8 @@ var target: Vector2 = Vector2.ZERO
 var target_mom: Vector2 = Vector2.ZERO
 var target_player: Vector2 = Vector2.ZERO
 var is_following: bool = false
+var enemy_attack_cooldown : float = 1
+var enemy_attack_counter : float = 0
 
 #enemys laufen auf mutter schleim
 #wenn player im radius auf player angreifen
@@ -17,9 +19,9 @@ func _physics_process(delta):
 		var player = get_tree().get_first_node_in_group("player")
 		var vector_to_player = player.position - global_position
 		var distance_to_player = vector_to_player.length()
-		print(distance_to_player)
 		if(distance_to_player < 20):
-			print("attack")
+			cooldowns(delta)
+			_attack()
 		else:
 			_move(player.position)
 	#if(!is_following):
@@ -33,8 +35,10 @@ func _move(target: Vector2) -> void:
 	direction = direction.normalized()
 	position = position + direction
 func _attack() -> void:
-	pass
-	
+	if (enemy_attack_counter > 0):
+		return
+	print("attack")
+	enemy_attack_counter = enemy_attack_cooldown
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
 		is_following = true
@@ -43,7 +47,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		direction = direction.normalized()
 		# global_position = direction * SPEED * delta
 		global_position = global_position + direction
-
+func cooldowns(delta: float):
+	if(enemy_attack_counter > 0):
+		enemy_attack_counter -= delta
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if(body.is_in_group("player")):
