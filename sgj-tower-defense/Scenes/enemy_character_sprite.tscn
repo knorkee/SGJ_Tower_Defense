@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c8ksqr0xtb1ub" path="res://Assets/Faceset.png" id="1_3bpvh"]
 [ext_resource type="Script" uid="uid://chtkams0fi4ah" path="res://Scenes/enemy_character_sprite.gd" id="2_3bpvh"]
+[ext_resource type="PackedScene" uid="uid://b5tsbym0ttqax" path="res://Scenes/health_component.tscn" id="3_wgnvp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 73.558876
 
-[node name="enemy" type="Sprite2D" unique_id=609421239]
+[node name="enemy" type="Sprite2D" unique_id=609421239 groups=["enemy"]]
 scale = Vector2(0.36842105, 0.31578946)
 texture = ExtResource("1_3bpvh")
 script = ExtResource("2_3bpvh")
@@ -15,6 +16,8 @@ script = ExtResource("2_3bpvh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1054048602]
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("3_wgnvp")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

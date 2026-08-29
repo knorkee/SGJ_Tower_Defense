@@ -25,12 +25,15 @@ func initialize(Direction: Vector2, Position: Vector2) -> void:
 func _physics_process(delta: float) -> void:
 	position += projectile_direction * speed * delta * 100
 
-func _on_body_entered(body: Node2D) -> void:
-	if (body.is_in_group("enemy")):
+
+func _on_area_entered(area: Area2D) -> void:
+	
+	var parent_of_area = area.get_parent()
+	
+	if (parent_of_area.is_in_group("enemy")):
 		
-		#body.queue_free() # for bnow this just deletes the enemy -- add damage later
-		var health = body.get_node("healthComponent")
+		var health = parent_of_area.get_node("healthComponent")
 		if (health != null):
 			health.deal_damage(100)
 		
-		queue_free() # delete this projectile
+		queue_free()
