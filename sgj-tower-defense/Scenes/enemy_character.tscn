@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4nh066y5s707"]
 
-[ext_resource type="Script" uid="uid://rmn2gguwqj34" path="res://Scenes/enemy_character.gd" id="1_2u673"]
+[ext_resource type="Script" uid="uid://rmn2gguwqj34" path="res://Scenes/enemy_character_collision.gd" id="1_2u673"]
 [ext_resource type="Texture2D" uid="uid://c8ksqr0xtb1ub" path="res://Assets/Faceset.png" id="2_2u673"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxb12"]
