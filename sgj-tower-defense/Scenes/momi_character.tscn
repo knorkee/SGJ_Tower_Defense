@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhig5mk27sam3"]
 
-[ext_resource type="PackedScene" uid="uid://b5tsbym0ttqax" path="res://Scenes/health_component.tscn" id="1_twsnc"]
+[ext_resource type="Script" uid="uid://diwysyuxtg35h" path="res://Scenes/momi_character.gd" id="1_74xxl"]
 [ext_resource type="Texture2D" uid="uid://cudjavvgkgbo8" path="res://Assets/player/MomSlime/MomSlime_Idle0000.png" id="3_74xxl"]
 [ext_resource type="Texture2D" uid="uid://djp3felm08ta8" path="res://Assets/player/MomSlime/MomSlime_Idle0001.png" id="4_gymvh"]
 [ext_resource type="Texture2D" uid="uid://bemltikuv4gun" path="res://Assets/player/MomSlime/MomSlime_Idle0002.png" id="5_t4j2o"]
@@ -11,41 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://vmd3sswvurpt" path="res://Assets/player/MomSlime/MomSlime_Idle0007.png" id="10_hc30p"]
 [ext_resource type="Texture2D" uid="uid://c1cs0v62eri5c" path="res://Assets/player/MomSlime/MomSlime_Idle0008.png" id="11_bqe4h"]
 [ext_resource type="Texture2D" uid="uid://dvualiwddmfgm" path="res://Assets/player/MomSlime/MomSlime_Idle0009.png" id="12_48vyc"]
+[ext_resource type="Script" uid="uid://cyhbf00q13eih" path="res://Scenes/health_component.gd" id="13_74xxl"]
 [ext_resource type="Texture2D" uid="uid://c3wq6nnb8ryo7" path="res://Assets/player/MomSlime/MomSlime_Idle0010.png" id="13_krg2d"]
-
-[sub_resource type="GDScript" id="GDScript_qcwfp"]
-script/source = "extends CharacterBody2D
-
-var speed = 2
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func _physics_process(delta: float) -> void:
-	
-	var direction = Vector2.ZERO
-	
-	# get mvoement direction here
-	if(Input.is_action_pressed(\"move_up\")):
-		direction.y = -1
-	if(Input.is_action_pressed(\"move_down\")):
-		direction.y = 1
-	if(Input.is_action_pressed(\"move_right\")):
-		direction.x = 1
-	if(Input.is_action_pressed(\"move_left\")):
-		direction.x = -1
-		
-	
-	velocity = direction * speed * delta * 10000
-	move_and_slide()
-"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcwfp"]
 radius = 4.0
@@ -92,12 +59,15 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 groups=["mommy"]]
+[node name="momi_character" type="CharacterBody2D" unique_id=929913682 node_paths=PackedStringArray("Health_Component") groups=["mommy"]]
 scale = Vector2(2, 2)
-script = SubResource("GDScript_qcwfp")
+script = ExtResource("1_74xxl")
+Health_Component = NodePath("HealthComponent")
 
-[node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("1_twsnc")]
-Health = 1
+[node name="HealthComponent" type="Node" parent="." unique_id=733404348]
+script = ExtResource("13_74xxl")
+hitpoints = 1
+metadata/_custom_type_script = "uid://cyhbf00q13eih"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335628379]
 position = Vector2(0, 2)

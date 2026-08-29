@@ -1,6 +1,5 @@
 extends AnimatedSprite2D
 # var SPEED: int = 1 * 10000
-@onready var particle_enemy_death: CPUParticles2D = $particle_enemy_death
 var target: Vector2 = Vector2.ZERO
 var target_mom: Vector2 = Vector2.ZERO
 var target_player: Vector2 = Vector2.ZERO
@@ -9,9 +8,14 @@ var enemy_attack_cooldown : float = 1
 var enemy_attack_counter : float = 0
 var mommy
 var gameScene
+
+@export var Health_Component: HealthComponent
+
 func _ready():
 	mommy = get_tree().get_first_node_in_group("mommy")
 	gameScene = get_tree().get_first_node_in_group("gameScene")
+	Health_Component.connect("health_below_zero", _on_enemy_death)
+
 func _physics_process(delta):
 	if(mommy != null):
 		if(!is_following):
@@ -47,8 +51,8 @@ func _move(target: Vector2) -> void:
 func _attack(player: Node2D) -> void:
 	if (enemy_attack_counter > 0):
 		return
-	var health_comp = player.get_node("healthComponent")
-	health_comp.deal_damage(20)
+	var health_comp = player.get_node("HealthComponent")
+	health_comp.receive_damage(20)
 	print("attack")
 	enemy_attack_counter = enemy_attack_cooldown
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -67,3 +71,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if(body.is_in_group("player")):
 		is_following = false
 		target_mom = target 
+
+func _on_enemy_death() -> void:
+	gameScene.enemies -= 1
+	# do particle
+	queue_free()

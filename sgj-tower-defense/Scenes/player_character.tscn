@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://da3u2p4kms5w6" path="res://Assets/player/Player_walk/frame0006.png" id="25_ijhcx"]
 [ext_resource type="Texture2D" uid="uid://dodxbg2pleums" path="res://Assets/player/Player_walk/frame0007.png" id="26_5oli8"]
 [ext_resource type="Texture2D" uid="uid://86o6ll7svx6r" path="res://Assets/player/Player_walk/frame0008.png" id="27_nu5ed"]
-[ext_resource type="PackedScene" uid="uid://b5tsbym0ttqax" path="res://Scenes/health_component.tscn" id="28_j5y83"]
+[ext_resource type="Script" uid="uid://cyhbf00q13eih" path="res://Scenes/health_component.gd" id="28_j5y83"]
 [ext_resource type="PackedScene" uid="uid://ccgou0v81tb2q" path="res://Scenes/particle_shoot.tscn" id="30_uchij"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o0f8b"]
@@ -132,10 +132,15 @@ animations = [{
 _data = [Vector2(0.042553194, 0.9887641), 0.0, 0.0, 0, 0, Vector2(0.9308511, 0.24719107), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 groups=["player"]]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 node_paths=PackedStringArray("Health_Component") groups=["player"]]
 script = ExtResource("1_cmdk4")
 ProjectileScene = ExtResource("2_o0f8b")
 AoE_Attack_Scene = ExtResource("3_ck4qn")
+Health_Component = NodePath("HealthComponent")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1053495018]
+script = ExtResource("28_j5y83")
+metadata/_custom_type_script = "uid://cyhbf00q13eih"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335628379]
 position = Vector2(0, -2)
@@ -147,8 +152,6 @@ texture_filter = 1
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_pkquq")
 animation = &"player_walk"
-
-[node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("28_j5y83")]
 
 [node name="particle_shoot" parent="." unique_id=1529036765 instance=ExtResource("30_uchij")]
 position = Vector2(1, 1)

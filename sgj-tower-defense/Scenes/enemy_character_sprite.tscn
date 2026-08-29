@@ -3,14 +3,13 @@
 [ext_resource type="Script" uid="uid://chtkams0fi4ah" path="res://Scenes/enemy_character_sprite.gd" id="2_3bpvh"]
 [ext_resource type="Texture2D" uid="uid://bjt2j65y2slyp" path="res://Assets/player/Enemy_walk/enemy_walk0000.png" id="2_xaqgc"]
 [ext_resource type="Texture2D" uid="uid://vss0fgbobppk" path="res://Assets/player/Enemy_walk/enemy_walk0001.png" id="3_uk7qj"]
-[ext_resource type="PackedScene" uid="uid://b5tsbym0ttqax" path="res://Scenes/health_component.tscn" id="3_wgnvp"]
 [ext_resource type="Texture2D" uid="uid://hx8gjb2awoci" path="res://Assets/player/Enemy_walk/enemy_walk0002.png" id="4_agyv5"]
 [ext_resource type="Texture2D" uid="uid://bmjleh0mbrnsj" path="res://Assets/player/Enemy_walk/enemy_walk0003.png" id="5_lvcss"]
 [ext_resource type="Texture2D" uid="uid://x3mox7rabhg0" path="res://Assets/player/Enemy_walk/enemy_walk0004.png" id="6_p1ruw"]
 [ext_resource type="Texture2D" uid="uid://col2yb5rp4hng" path="res://Assets/player/Enemy_walk/enemy_walk0005.png" id="7_umhja"]
 [ext_resource type="Texture2D" uid="uid://bfwvwb8x1xkqt" path="res://Assets/player/Enemy_walk/enemy_walk0006.png" id="8_f0phb"]
 [ext_resource type="Texture2D" uid="uid://bbfdwfcnm1b1i" path="res://Assets/player/Enemy_walk/enemy_walk0007.png" id="9_unaw3"]
-[ext_resource type="PackedScene" uid="uid://cujo7jdr8rgqh" path="res://Scenes/particle_enemy_death.tscn" id="11_uk7qj"]
+[ext_resource type="Script" uid="uid://cyhbf00q13eih" path="res://Scenes/health_component.gd" id="10_xaqgc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pkquq"]
 animations = [{
@@ -50,7 +49,7 @@ radius = 93.16249
 [sub_resource type="CircleShape2D" id="CircleShape2D_wgnvp"]
 radius = 7.5
 
-[node name="enemy" type="AnimatedSprite2D" unique_id=1530119713 groups=["enemy"]]
+[node name="enemy" type="AnimatedSprite2D" unique_id=1530119713 node_paths=PackedStringArray("Health_Component") groups=["enemy"]]
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pkquq")
@@ -58,14 +57,16 @@ autoplay = "default"
 frame = 5
 frame_progress = 0.14831513
 script = ExtResource("2_3bpvh")
+Health_Component = NodePath("HealthComponent")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=431317986]
+script = ExtResource("10_xaqgc")
+metadata/_custom_type_script = "uid://cyhbf00q13eih"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1233985980]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1054048602]
 shape = SubResource("CircleShape2D_g4v7s")
-
-[node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("3_wgnvp")]
-enemy_death_particle = ExtResource("11_uk7qj")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1360808042 groups=["hitbox"]]
 

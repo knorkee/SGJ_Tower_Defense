@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @export var ProjectileScene: PackedScene
 @export var AoE_Attack_Scene: PackedScene
+@export var Health_Component: HealthComponent
 var gameScene
 
 var speed = 1
@@ -17,7 +18,7 @@ var aoe_attack : Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gameScene = get_tree().get_first_node_in_group("gameScene")
-
+	Health_Component.connect("health_below_zero", _on_player_death)
 	pass # Replace with function body.
 
 
@@ -89,3 +90,6 @@ func inputs():
 		
 		if (Input.is_action_just_released("ability_1")):
 			aoe_attack.activate_attack()
+
+func _on_player_death() -> void:
+	queue_free()

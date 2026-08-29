@@ -9,8 +9,8 @@ var wave
 func _ready() -> void:
 	wave = get_parent()
 	wave_info.text = "Enemies left: " + str(wave.enemies)
-	health_comp = player.get_node("healthComponent")
-	texture_progress_bar.value = health_comp.Health
+	health_comp = player.get_node("HealthComponent")
+	texture_progress_bar.value = health_comp.hitpoints
 	pass # Replace with function body.
 
 
@@ -18,6 +18,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	wave_info.text = "Enemies left: " + str(wave.enemies)
 	if(health_comp != null):
-		texture_progress_bar.value = health_comp.Health
+		texture_progress_bar.value = health_comp.hitpoints
 	else:
 		texture_progress_bar.value = 0
