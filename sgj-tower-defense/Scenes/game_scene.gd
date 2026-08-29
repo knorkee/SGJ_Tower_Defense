@@ -5,6 +5,7 @@ extends Node2D
 var enemyCounter: int
 var waveCounter: int = 1
 var spawnerCounter: int = 0
+var enemies: int =  0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	enemyCounter = waveCounter * 10
@@ -20,6 +21,7 @@ func _generate_random_number() -> int:
 	return number
 func _on_timer_timeout() -> void:
 	if(enemyCounter > 0):
+		enemies+=1
 		enemyCounter = enemyCounter - 1
 		spawnerCounter = _generate_random_number()
 		if(spawnerCounter == 0):
