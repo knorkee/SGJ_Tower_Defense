@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bnrj6hqmy5ppl"]
+
+[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="1_6w1w1"]
+[ext_resource type="Texture2D" uid="uid://df56tmpdul6di" path="res://Assets/ui/health_bar/health_bar_bg.png" id="2_1tdhr"]
+[ext_resource type="Texture2D" uid="uid://hwxmlydqncfn" path="res://Assets/ui/health_bar/health_bar_overlay.png" id="3_fmrx5"]
+[ext_resource type="Texture2D" uid="uid://tp3xdwbgmcrx" path="res://Assets/ui/health_bar/health_bar_progress.png" id="4_qm20r"]
+
+[node name="ui_game" type="Control" unique_id=1721979517]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="box" type="VBoxContainer" parent="." unique_id=914521207]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 636.0
+offset_bottom = 355.0
+offset_transform_enabled = true
+
+[node name="line_top" type="HBoxContainer" parent="box" unique_id=1914685299]
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="stats_box" type="HBoxContainer" parent="box/line_top" unique_id=1551084169]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="dmg" type="Label" parent="box/line_top/stats_box" unique_id=1082173667]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "Dmg: 1"
+
+[node name="const" type="Label" parent="box/line_top/stats_box" unique_id=267060562]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "const: 1"
+
+[node name="floppynes" type="Label" parent="box/line_top/stats_box" unique_id=1865749303]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "Floppynes: 1"
+
+[node name="wave_info" type="Label" parent="box/line_top" unique_id=2046860015]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "1. Wave: 55%"
+
+[node name="line_bottom" type="HBoxContainer" parent="box" unique_id=1703279295]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="health" type="Label" parent="box/line_bottom" unique_id=104117895]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "health"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="box/line_bottom" unique_id=930182956]
+layout_mode = 2
+size_flags_vertical = 4
+value = 40.0
+texture_under = ExtResource("2_1tdhr")
+texture_over = ExtResource("3_fmrx5")
+texture_progress = ExtResource("4_qm20r")
