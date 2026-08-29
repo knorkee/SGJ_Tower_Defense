@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhig5mk27sam3"]
 
 [ext_resource type="Script" uid="uid://diwysyuxtg35h" path="res://Scenes/momi_character.gd" id="1_74xxl"]
+[ext_resource type="PackedScene" uid="uid://c4r3wwmk0k6oe" path="res://Scenes/particle_mom_death.tscn" id="2_gymvh"]
 [ext_resource type="Texture2D" uid="uid://cudjavvgkgbo8" path="res://Assets/player/MomSlime/MomSlime_Idle0000.png" id="3_74xxl"]
 [ext_resource type="Texture2D" uid="uid://djp3felm08ta8" path="res://Assets/player/MomSlime/MomSlime_Idle0001.png" id="4_gymvh"]
 [ext_resource type="Texture2D" uid="uid://bemltikuv4gun" path="res://Assets/player/MomSlime/MomSlime_Idle0002.png" id="5_t4j2o"]
@@ -63,6 +64,7 @@ animations = [{
 scale = Vector2(2, 2)
 script = ExtResource("1_74xxl")
 Health_Component = NodePath("HealthComponent")
+particle_mom_deathScene = ExtResource("2_gymvh")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=733404348]
 script = ExtResource("13_74xxl")
