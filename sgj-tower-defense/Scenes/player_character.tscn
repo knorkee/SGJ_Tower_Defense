@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://da3u2p4kms5w6" path="res://Assets/player/Player_walk/frame0006.png" id="25_ijhcx"]
 [ext_resource type="Texture2D" uid="uid://dodxbg2pleums" path="res://Assets/player/Player_walk/frame0007.png" id="26_5oli8"]
 [ext_resource type="Texture2D" uid="uid://86o6ll7svx6r" path="res://Assets/player/Player_walk/frame0008.png" id="27_nu5ed"]
+[ext_resource type="PackedScene" uid="uid://b5tsbym0ttqax" path="res://Scenes/health_component.tscn" id="28_j5y83"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o0f8b"]
 radius = 4.0
@@ -38,7 +39,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_o0f8b")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -88,7 +89,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_wfjhv")
 }],
-"loop": 0,
+"loop": false,
 "name": &"player_attack",
 "speed": 20.0
 }, {
@@ -120,7 +121,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_nu5ed")
 }],
-"loop": 0,
+"loop": false,
 "name": &"player_walk",
 "speed": 15.0
 }]
@@ -139,3 +140,5 @@ texture_filter = 1
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_pkquq")
 animation = &"player_walk"
+
+[node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("28_j5y83")]
