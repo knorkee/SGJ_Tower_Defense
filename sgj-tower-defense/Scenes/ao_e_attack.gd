@@ -6,9 +6,13 @@ var alive_counter : float = 0.2
 
 var damage : int
 
+var player : Node2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	
+	# set player node
+	player = get_tree().get_first_node_in_group("player")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,8 +52,8 @@ func attack_all_in_area():
 		if (!parent.is_in_group("enemy")):
 			continue
 		
-		var health_cp = parent.get_node("healthComponent")
-		health_cp.deal_damage(damage)
+		var health_cp = parent.get_node("HealthComponent")
+		health_cp.receive_damage(damage)
 
 
 func activate_attack() -> void:
