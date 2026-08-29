@@ -1,4 +1,5 @@
 extends Node2D
+@export var game_scene: Node2D
 @export var enemy_prefab : PackedScene
 @export var Target : Node2D
 @export var Player : Node2D

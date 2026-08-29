@@ -1,5 +1,5 @@
 extends Node2D
-
+signal enemy_death
 @export var Health : int = 100
 
 # Called when the node enters the scene tree for the first time.
@@ -14,4 +14,7 @@ func _process(delta: float) -> void:
 func deal_damage(damage: int) -> void:
 	Health -= damage
 	if (Health <= 0):
+		var gameScene = get_tree().get_first_node_in_group("gameScene")
+		gameScene.enemies -=1
 		get_parent().queue_free()
+		

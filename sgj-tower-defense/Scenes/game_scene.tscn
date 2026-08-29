@@ -8,25 +8,28 @@
 [ext_resource type="PackedScene" uid="uid://bnrj6hqmy5ppl" path="res://Scenes/ui_game.tscn" id="6_rgj8m"]
 [ext_resource type="Script" uid="uid://d3voi6tlwl6c7" path="res://Scenes/ui_game.gd" id="7_2fmhe"]
 
-[node name="GameScene" type="Node2D" unique_id=388441636]
+[node name="GameScene" type="Node2D" unique_id=388441636 groups=["gameScene"]]
 script = ExtResource("1_fiftr")
 
-[node name="enemy_spawner_right" parent="." unique_id=1687482148 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
+[node name="enemy_spawner_right" parent="." unique_id=1687482148 node_paths=PackedStringArray("game_scene", "Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(728, 5)
+game_scene = NodePath("..")
 Target = NodePath("../momi_character")
 Player = NodePath("../PlayerCharacter")
 min_x = -60
 max_y = 120
 
-[node name="enemy_spawner_left" parent="." unique_id=1468076625 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
+[node name="enemy_spawner_left" parent="." unique_id=1468076625 node_paths=PackedStringArray("game_scene", "Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(-90, 0)
+game_scene = NodePath("..")
 Target = NodePath("../momi_character")
 Player = NodePath("../PlayerCharacter")
 min_x = -60
 max_y = 120
 
-[node name="enemy_spawner_top" parent="." unique_id=2011223721 node_paths=PackedStringArray("Target", "Player") instance=ExtResource("2_fiftr")]
+[node name="enemy_spawner_top" parent="." unique_id=2011223721 node_paths=PackedStringArray("game_scene", "Target", "Player") instance=ExtResource("2_fiftr")]
 position = Vector2(314, -81)
+game_scene = NodePath("..")
 Target = NodePath("../momi_character")
 Player = NodePath("../PlayerCharacter")
 min_x = -300
