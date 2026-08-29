@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://duqvniq1yqos5" path="res://Scenes/game_logic.tscn" id="5_1ixah"]
 [ext_resource type="PackedScene" uid="uid://bnrj6hqmy5ppl" path="res://Scenes/ui_game.tscn" id="6_rgj8m"]
 [ext_resource type="Script" uid="uid://d3voi6tlwl6c7" path="res://Scenes/ui_game.gd" id="7_2fmhe"]
+[ext_resource type="Texture2D" uid="uid://sf8q8pf2w3qt" path="res://Assets/player/Background.png" id="9_ikfsv"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_pkquq"]
 
 [node name="GameScene" type="Node2D" unique_id=388441636 groups=["gameScene"]]
 script = ExtResource("1_fiftr")
@@ -59,6 +62,16 @@ offset_left = 259.0
 offset_top = -0.5
 offset_right = 351.0
 offset_bottom = 30.5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=574442717]
+texture = SubResource("ImageTexture_pkquq")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1947514131]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(320, 180)
+scale = Vector2(2, 2)
+texture = ExtResource("9_ikfsv")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="NextWaveButton" to="." method="_on_next_wave_button_pressed"]
