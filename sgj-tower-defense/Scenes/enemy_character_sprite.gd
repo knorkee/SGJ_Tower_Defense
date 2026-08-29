@@ -10,6 +10,7 @@ var mommy
 var gameScene
 
 @export var Health_Component: HealthComponent
+@export var particle_enemy_deathScene: PackedScene
 
 func _ready():
 	mommy = get_tree().get_first_node_in_group("mommy")
@@ -74,5 +75,11 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_enemy_death() -> void:
 	gameScene.enemies -= 1
-	# do particle
+	
+	#spawn particles
+	var particle = particle_enemy_deathScene.instantiate()
+	get_tree().current_scene.add_child(particle)
+	particle.initialize(global_position)
+	
+	
 	queue_free()
