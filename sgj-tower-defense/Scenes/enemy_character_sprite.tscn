@@ -4,9 +4,11 @@
 [ext_resource type="Script" uid="uid://chtkams0fi4ah" path="res://Scenes/enemy_character_sprite.gd" id="2_3bpvh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 118.004234
+radius = 73.558876
 
 [node name="enemy" type="Sprite2D" unique_id=609421239]
+position = Vector2(12, -13)
+scale = Vector2(0.36842105, 0.31578946)
 texture = ExtResource("1_3bpvh")
 script = ExtResource("2_3bpvh")
 
