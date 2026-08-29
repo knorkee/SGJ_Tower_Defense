@@ -4,6 +4,8 @@ var preview_active : bool = true
 
 var alive_counter : float = 0.2
 
+var damage : int
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -27,10 +29,27 @@ func attack_deployed(delta:float):
 	if (alive_counter <= 0):
 		queue_free()
 
-
+var objects_in_area = []
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+	if (area.is_in_group("hitbox")):
+		objects_in_area.append(area)
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if (area.is_in_group("hitbox")):
+		objects_in_area.erase(area)
+
+func attack_all_in_area():
+	for object in objects_in_area:
+		
+		var hitbox : Area2D = object
+		var parent = hitbox.get_parent()
+		
+		if (!parent.is_in_group("enemy")):
+			continue
+		
+		var health_cp = parent.get_node("healthComponent")
+		health_cp.deal_damage(damage)
 
 
 func activate_attack() -> void:
@@ -40,3 +59,5 @@ func activate_attack() -> void:
 	# swap sprites
 	get_node("preview").visible = false
 	get_node("attack_area").visible = true
+	
+	attack_all_in_area()
