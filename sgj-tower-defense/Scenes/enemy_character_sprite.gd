@@ -13,8 +13,15 @@ func _physics_process(delta):
 	if(!is_following):
 		_move(target)
 	else:
+		
 		var player = get_tree().get_first_node_in_group("player")
-		_move(player.position)
+		var vector_to_player = player.position - global_position
+		var distance_to_player = vector_to_player.length()
+		print(distance_to_player)
+		if(distance_to_player < 20):
+			print("attack")
+		else:
+			_move(player.position)
 	#if(!is_following):
 		#var direction = target - global_position
 		# var direction = Vector2.DOWN
@@ -25,7 +32,8 @@ func _move(target: Vector2) -> void:
 	var direction = target - global_position
 	direction = direction.normalized()
 	position = position + direction
-	
+func _attack() -> void:
+	pass
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
