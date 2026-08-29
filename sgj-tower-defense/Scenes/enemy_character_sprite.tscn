@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://col2yb5rp4hng" path="res://Assets/player/Enemy_walk/enemy_walk0005.png" id="7_umhja"]
 [ext_resource type="Texture2D" uid="uid://bfwvwb8x1xkqt" path="res://Assets/player/Enemy_walk/enemy_walk0006.png" id="8_f0phb"]
 [ext_resource type="Texture2D" uid="uid://bbfdwfcnm1b1i" path="res://Assets/player/Enemy_walk/enemy_walk0007.png" id="9_unaw3"]
+[ext_resource type="PackedScene" uid="uid://cujo7jdr8rgqh" path="res://Scenes/particle_enemy_death.tscn" id="11_uk7qj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pkquq"]
 animations = [{
@@ -64,6 +65,7 @@ script = ExtResource("2_3bpvh")
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("3_wgnvp")]
+enemy_death_particle = ExtResource("11_uk7qj")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1360808042 groups=["hitbox"]]
 

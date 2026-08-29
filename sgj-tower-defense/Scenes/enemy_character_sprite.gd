@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 # var SPEED: int = 1 * 10000
+@onready var particle_enemy_death: CPUParticles2D = $particle_enemy_death
 var target: Vector2 = Vector2.ZERO
 var target_mom: Vector2 = Vector2.ZERO
 var target_player: Vector2 = Vector2.ZERO

@@ -1,6 +1,7 @@
 extends Node2D
 signal enemy_death
 @export var Health : int = 100
+@export var enemy_death_particle: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

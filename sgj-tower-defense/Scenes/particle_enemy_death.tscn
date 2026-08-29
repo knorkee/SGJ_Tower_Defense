@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cujo7jdr8rgqh"]
+
+[sub_resource type="Curve" id="Curve_1n0di"]
+_data = [Vector2(0.042553194, 0.9887641), 0.0, 0.0, 0, 0, Vector2(0.9308511, 0.24719107), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="particle_enemy_death" type="CPUParticles2D" unique_id=1529036765]
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+linear_accel_max = 2.0
+tangential_accel_max = 10.0
+damping_max = 19.326
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_1n0di")

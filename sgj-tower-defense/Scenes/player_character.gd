@@ -1,5 +1,7 @@
 extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var particle_shoot: CPUParticles2D = $particle_shoot
+
 
 @export var ProjectileScene: PackedScene
 @export var AoE_Attack_Scene: PackedScene
@@ -73,6 +75,8 @@ func inputs():
 		# auto attack
 		if(Input.is_action_pressed("attack_button")):
 			animated_sprite.play("player_attack")
+			particle_shoot.look_at(get_global_mouse_position())
+			particle_shoot.emitting = true
 			attack()
 		
 		# AoE ability

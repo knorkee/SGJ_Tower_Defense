@@ -29,6 +29,7 @@ enemy=""
 projectile=""
 hitbox=""
 gameScene=""
+particles=""
 
 [input]
 

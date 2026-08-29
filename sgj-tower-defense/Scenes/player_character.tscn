@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dodxbg2pleums" path="res://Assets/player/Player_walk/frame0007.png" id="26_5oli8"]
 [ext_resource type="Texture2D" uid="uid://86o6ll7svx6r" path="res://Assets/player/Player_walk/frame0008.png" id="27_nu5ed"]
 [ext_resource type="PackedScene" uid="uid://b5tsbym0ttqax" path="res://Scenes/health_component.tscn" id="28_j5y83"]
+[ext_resource type="PackedScene" uid="uid://ccgou0v81tb2q" path="res://Scenes/particle_shoot.tscn" id="30_uchij"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o0f8b"]
 radius = 4.0
@@ -127,6 +128,10 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="Curve" id="Curve_1n0di"]
+_data = [Vector2(0.042553194, 0.9887641), 0.0, 0.0, 0, 0, Vector2(0.9308511, 0.24719107), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 groups=["player"]]
 script = ExtResource("1_cmdk4")
 ProjectileScene = ExtResource("2_o0f8b")
@@ -144,3 +149,7 @@ sprite_frames = SubResource("SpriteFrames_pkquq")
 animation = &"player_walk"
 
 [node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("28_j5y83")]
+
+[node name="particle_shoot" parent="." unique_id=1529036765 instance=ExtResource("30_uchij")]
+position = Vector2(1, 1)
+scale_amount_curve = SubResource("Curve_1n0di")
