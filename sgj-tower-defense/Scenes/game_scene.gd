@@ -7,12 +7,23 @@ var waveCounter: int = 1
 var spawnerCounter: int = 0
 var enemies: int =  0
 var game_lost: bool = false
+var game_won: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	enemyCounter = waveCounter * 10
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(enemies == 0 && enemyCounter == 0):
+		game_won = true
+	if(game_lost):
+		await sleep(2.0)
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	if(game_won):
+		print("winner")
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+func sleep(seconds: float)->void:
+	await get_tree().create_timer(seconds).timeout
 func _generate_random_number() -> int:
 	var rng = RandomNumberGenerator.new()
 	var number = rng.randi_range(0,2)
