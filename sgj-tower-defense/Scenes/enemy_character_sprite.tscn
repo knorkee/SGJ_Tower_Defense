@@ -7,6 +7,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 200.65736
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wgnvp"]
+radius = 19.0
+
 [node name="enemy" type="Sprite2D" unique_id=609421239 groups=["enemy"]]
 scale = Vector2(0.36842105, 0.31578946)
 texture = ExtResource("1_3bpvh")
@@ -18,6 +21,11 @@ script = ExtResource("2_3bpvh")
 shape = SubResource("CircleShape2D_g4v7s")
 
 [node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("3_wgnvp")]
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1360808042 groups=["hitbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=379805213]
+shape = SubResource("CircleShape2D_wgnvp")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

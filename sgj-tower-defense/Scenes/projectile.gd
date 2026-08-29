@@ -28,6 +28,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	
+	if (!area.is_in_group("hitbox")):
+		return
+		
 	var parent_of_area = area.get_parent()
 	
 	if (parent_of_area.is_in_group("enemy")):
