@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://dhig5mk27sam3"]
 
-[ext_resource type="Texture2D" uid="uid://cayd7c66gh7yq" path="res://Assets/character_green_front.png" id="1_mudcf"]
 [ext_resource type="PackedScene" uid="uid://b5tsbym0ttqax" path="res://Scenes/health_component.tscn" id="1_twsnc"]
+[ext_resource type="Texture2D" uid="uid://cudjavvgkgbo8" path="res://Assets/player/MomSlime/MomSlime_Idle0000.png" id="3_74xxl"]
+[ext_resource type="Texture2D" uid="uid://djp3felm08ta8" path="res://Assets/player/MomSlime/MomSlime_Idle0001.png" id="4_gymvh"]
+[ext_resource type="Texture2D" uid="uid://bemltikuv4gun" path="res://Assets/player/MomSlime/MomSlime_Idle0002.png" id="5_t4j2o"]
+[ext_resource type="Texture2D" uid="uid://c87b3qaj5scap" path="res://Assets/player/MomSlime/MomSlime_Idle0003.png" id="6_yab1p"]
+[ext_resource type="Texture2D" uid="uid://ca0gi0gtf1okp" path="res://Assets/player/MomSlime/MomSlime_Idle0004.png" id="7_8d1oj"]
+[ext_resource type="Texture2D" uid="uid://c4hfy4nwjsmkd" path="res://Assets/player/MomSlime/MomSlime_Idle0005.png" id="8_xsjod"]
+[ext_resource type="Texture2D" uid="uid://du3qtiv8beacl" path="res://Assets/player/MomSlime/MomSlime_Idle0006.png" id="9_aftuc"]
+[ext_resource type="Texture2D" uid="uid://vmd3sswvurpt" path="res://Assets/player/MomSlime/MomSlime_Idle0007.png" id="10_hc30p"]
+[ext_resource type="Texture2D" uid="uid://c1cs0v62eri5c" path="res://Assets/player/MomSlime/MomSlime_Idle0008.png" id="11_bqe4h"]
+[ext_resource type="Texture2D" uid="uid://dvualiwddmfgm" path="res://Assets/player/MomSlime/MomSlime_Idle0009.png" id="12_48vyc"]
+[ext_resource type="Texture2D" uid="uid://c3wq6nnb8ryo7" path="res://Assets/player/MomSlime/MomSlime_Idle0010.png" id="13_krg2d"]
 
 [sub_resource type="GDScript" id="GDScript_qcwfp"]
 script/source = "extends CharacterBody2D
@@ -41,6 +51,47 @@ func _physics_process(delta: float) -> void:
 radius = 4.0
 height = 11.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkquq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_74xxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gymvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t4j2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yab1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8d1oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xsjod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aftuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hc30p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bqe4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_48vyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_krg2d")
+}],
+"loop": 1,
+"name": &"momSlime_Idle",
+"speed": 10.0
+}]
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682]
 scale = Vector2(2, 2)
 script = SubResource("GDScript_qcwfp")
@@ -48,11 +99,14 @@ script = SubResource("GDScript_qcwfp")
 [node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("1_twsnc")]
 Health = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1959504882]
-texture_filter = 1
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("1_mudcf")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335628379]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_qcwfp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=885815402]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pkquq")
+animation = &"momSlime_Idle"
+autoplay = "momSlime_Idle"
+frame = 2
+frame_progress = 0.8804663
