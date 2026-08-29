@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dxn3ihmmgybmx"]
+
+[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="1_28flt"]
+[ext_resource type="Script" uid="uid://b8f2w5xiwcofb" path="res://Scenes/main_menu.gd" id="1_48xlc"]
+
+[node name="Main Menu" type="Node2D" unique_id=1739704012]
+script = ExtResource("1_48xlc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1524719042]
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 4
+
+[node name="title" type="Label" parent="VBoxContainer" unique_id=889443555]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_28flt")
+text = "Once upon a slime"
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=1232368823]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_28flt")
+text = "Start"
+
+[node name="options" type="Button" parent="VBoxContainer" unique_id=840652528]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_28flt")
+disabled = true
+text = "Options"
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=1284664575]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_28flt")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
