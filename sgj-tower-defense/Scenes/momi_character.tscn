@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhig5mk27sam3"]
 
 [ext_resource type="Texture2D" uid="uid://cayd7c66gh7yq" path="res://Assets/character_green_front.png" id="1_mudcf"]
+[ext_resource type="PackedScene" uid="uid://b5tsbym0ttqax" path="res://Scenes/health_component.tscn" id="1_twsnc"]
 
 [sub_resource type="GDScript" id="GDScript_qcwfp"]
 script/source = "extends CharacterBody2D
@@ -43,6 +44,9 @@ height = 11.0
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682]
 scale = Vector2(2, 2)
 script = SubResource("GDScript_qcwfp")
+
+[node name="healthComponent" parent="." unique_id=1358223228 instance=ExtResource("1_twsnc")]
+Health = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1959504882]
 texture_filter = 1

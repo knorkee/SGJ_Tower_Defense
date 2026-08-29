@@ -1,6 +1,6 @@
 extends Node2D
 
-var Health : int = 100
+@export var Health : int = 100
 
 
 # Called when the node enters the scene tree for the first time.
