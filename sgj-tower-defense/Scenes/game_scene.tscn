@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bv8gyq4myw1va" path="res://Scenes/game_scene.gd" id="1_fiftr"]
 [ext_resource type="PackedScene" uid="uid://bqkg3w4ykeeeg" path="res://Scenes/player_character.tscn" id="1_x87qo"]
 [ext_resource type="PackedScene" uid="uid://docs5nmbr8sfn" path="res://Scenes/enemy_spawner.tscn" id="2_fiftr"]
+[ext_resource type="PackedScene" uid="uid://duqvniq1yqos5" path="res://Scenes/game_logic.tscn" id="5_1ixah"]
 
 [node name="GameScene" type="Node2D" unique_id=388441636]
 script = ExtResource("1_fiftr")
@@ -39,5 +40,7 @@ position = Vector2(321, 157)
 
 [node name="Timer" type="Timer" parent="." unique_id=2058833301]
 autostart = true
+
+[node name="GameLogic" parent="." unique_id=976365663 instance=ExtResource("5_1ixah")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
