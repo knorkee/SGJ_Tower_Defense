@@ -6,7 +6,7 @@ var preview_active : bool = true
 var alive_counter : float = 0.2
 
 var damage : int
-var range : float = 130
+var range : float = 250
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

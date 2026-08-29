@@ -14,6 +14,7 @@ var speed = 1
 var projectile_cooldown : float = 0.3
 var projectile_cd_counter : float = 0
 
+# aoe stuff
 var aoe_attack : Node2D
 var aoe_preview_active : bool = false
 var aoe_cooldown : float = 3
