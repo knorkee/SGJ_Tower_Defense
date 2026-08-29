@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://djik34wrts40w"]
+
+[ext_resource type="Script" uid="uid://comfa03u0n6dv" path="res://story_controller.gd" id="1_73rxq"]
+[ext_resource type="Texture2D" uid="uid://cssxdpvlmdwcr" path="res://Assets/story/Story1.png" id="1_y8xsu"]
+[ext_resource type="Texture2D" uid="uid://ce636bij4hr4f" path="res://Assets/story/Story2.png" id="3_aixpu"]
+[ext_resource type="Texture2D" uid="uid://ytphlj51vu42" path="res://Assets/story/Story3.png" id="4_qi42a"]
+[ext_resource type="Texture2D" uid="uid://dlbjsmuy0n5ol" path="res://Assets/story/Story4.png" id="5_8yr62"]
+
+[node name="Control" type="Control" unique_id=575088076]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_73rxq")
+
+[node name="Story1" type="Sprite2D" parent="." unique_id=1886600016]
+texture_filter = 1
+position = Vector2(320, 179)
+scale = Vector2(2, 2)
+texture = ExtResource("1_y8xsu")
+
+[node name="Story2" type="Sprite2D" parent="." unique_id=230944262]
+visible = false
+texture_filter = 1
+position = Vector2(320, 179)
+scale = Vector2(2, 2)
+texture = ExtResource("3_aixpu")
+
+[node name="Story3" type="Sprite2D" parent="." unique_id=2012717365]
+visible = false
+texture_filter = 1
+position = Vector2(320, 179)
+scale = Vector2(2, 2)
+texture = ExtResource("4_qi42a")
+
+[node name="Story4" type="Sprite2D" parent="." unique_id=90666837]
+visible = false
+texture_filter = 1
+position = Vector2(320, 179)
+scale = Vector2(2, 2)
+texture = ExtResource("5_8yr62")
