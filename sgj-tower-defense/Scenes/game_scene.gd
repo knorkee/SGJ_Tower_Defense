@@ -12,7 +12,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	
+	# quit-game button
+	if (Input.is_action_pressed("EndGame")):
+		get_tree().quit()
 
 func _generate_random_number() -> int:
 	var rng = RandomNumberGenerator.new()

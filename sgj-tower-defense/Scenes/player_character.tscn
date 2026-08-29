@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbx8oi7yyds7g" path="res://Scenes/player_character.gd" id="1_cmdk4"]
 [ext_resource type="PackedScene" uid="uid://cvhjs400oatwv" path="res://Scenes/projectile.tscn" id="2_o0f8b"]
+[ext_resource type="PackedScene" uid="uid://bcm3tok77d1hn" path="res://Scenes/ao_e_attack.tscn" id="3_ck4qn"]
 [ext_resource type="Texture2D" uid="uid://b6vihxa2srwhm" path="res://Assets/player/player_S_F_0.png" id="3_o0f8b"]
 [ext_resource type="Texture2D" uid="uid://jdaxubwlc5yj" path="res://Assets/player/Player_attack/player_atck_F0000.png" id="4_a1rxb"]
 [ext_resource type="Texture2D" uid="uid://d2v0v4uk1fbgl" path="res://Assets/player/Player_attack/player_atck_F0001.png" id="5_i0ilm"]
@@ -129,6 +130,7 @@ animations = [{
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=929913682 groups=["player"]]
 script = ExtResource("1_cmdk4")
 ProjectileScene = ExtResource("2_o0f8b")
+AoE_Attack_Scene = ExtResource("3_ck4qn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1335628379]
 position = Vector2(0, -2)

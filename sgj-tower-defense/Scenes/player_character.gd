@@ -2,11 +2,14 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var ProjectileScene: PackedScene
+@export var AoE_Attack_Scene: PackedScene
 
 var speed = 1
 
 var projectile_cooldown : float = 0.3
 var projectile_cd_counter : float = 0
+
+var aoe_attack : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,14 +18,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	cooldowns(delta)
-	
-	if(Input.is_action_pressed("attack_button")):
-		animated_sprite.play("player_attack")
-		attack()
-	
-	if (Input.is_action_pressed("EndGame")):
-		get_tree().quit()
+	inputs()
 
 func attack() -> void: #can u pls make it so attack can only happen every 20 frames, so it matches the animation?
 	if (projectile_cd_counter > 0):
@@ -64,3 +62,21 @@ func _physics_process(delta: float) -> void:
 func cooldowns(delta: float):
 	if(projectile_cd_counter > 0):
 		projectile_cd_counter -= delta
+
+
+func inputs():
+	
+	# auto attack
+	if(Input.is_action_pressed("attack_button")):
+		animated_sprite.play("player_attack")
+		attack()
+	
+	# AoE ability
+	if (Input.is_action_just_pressed("ability_1")):
+		
+		aoe_attack = AoE_Attack_Scene.instantiate()
+		aoe_attack.position = global_position
+		get_tree().current_scene.add_child(aoe_attack)
+	
+	if (Input.is_action_just_released("ability_1")):
+		aoe_attack.activate_attack()
