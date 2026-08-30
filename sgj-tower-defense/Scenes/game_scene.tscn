@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://sf8q8pf2w3qt" path="res://Assets/player/Background.png" id="9_ikfsv"]
 [ext_resource type="Texture2D" uid="uid://c7bbvx21v2pwi" path="res://Assets/ui/buttons/nextWave_btn_pressed.png" id="9_wywco"]
 [ext_resource type="AudioStream" uid="uid://ju372rejer2p" path="res://Assets/music/game_loop.wav" id="10_5dgvu"]
+[ext_resource type="Texture2D" uid="uid://b0nvywsco3ok0" path="res://Assets/ui/buttons/nextWave_btn_hover.png" id="11_8m72m"]
 [ext_resource type="PackedScene" uid="uid://bmhiv188vvkwa" path="res://Scenes/particles_rain.tscn" id="11_uscyt"]
 [ext_resource type="PackedScene" uid="uid://c2sluqrqp618x" path="res://Scenes/GameOverScreen.tscn" id="12_4xiap"]
 [ext_resource type="AudioStream" uid="uid://b6mc5vmtiulq8" path="res://Assets/music/shootsound.wav" id="12_ldntv"]
@@ -70,6 +71,7 @@ offset_right = 357.0
 offset_bottom = 40.0
 texture_normal = ExtResource("8_4xiap")
 texture_pressed = ExtResource("9_wywco")
+texture_hover = ExtResource("11_8m72m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=574442717]
 texture = SubResource("ImageTexture_pkquq")

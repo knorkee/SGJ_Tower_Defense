@@ -4,8 +4,10 @@
 [ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="2_6hy6l"]
 [ext_resource type="Texture2D" uid="uid://bv44o6d4ggfk2" path="res://Assets/ui/buttons/restart_btn.png" id="3_q0tft"]
 [ext_resource type="Texture2D" uid="uid://lvfswvbr3qck" path="res://Assets/ui/buttons/restart_btn_pressed.png" id="4_ew8mo"]
+[ext_resource type="Texture2D" uid="uid://c3nhiyfg10j6r" path="res://Assets/ui/buttons/restart_btn_hover.png" id="5_g28uj"]
 [ext_resource type="Texture2D" uid="uid://d1li3wlyx3b6e" path="res://Assets/ui/buttons/quit_btn.png" id="5_jii3q"]
 [ext_resource type="Texture2D" uid="uid://1oj1shl10h1h" path="res://Assets/ui/buttons/quit_btn_pressed.png" id="6_g28uj"]
+[ext_resource type="Texture2D" uid="uid://cshpd2p6dgu8e" path="res://Assets/ui/buttons/quit_btn_hover.png" id="8_327ky"]
 
 [node name="GameOverScreen" type="Node2D" unique_id=300487262]
 script = ExtResource("1_2emqa")
@@ -67,11 +69,13 @@ size_flags_vertical = 6
 layout_mode = 2
 texture_normal = ExtResource("3_q0tft")
 texture_pressed = ExtResource("4_ew8mo")
+texture_hover = ExtResource("5_g28uj")
 
 [node name="quit" type="TextureButton" parent="VBoxContainer/HBoxContainer" unique_id=1786546182]
 layout_mode = 2
 texture_normal = ExtResource("5_jii3q")
 texture_pressed = ExtResource("6_g28uj")
+texture_hover = ExtResource("8_327ky")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer" unique_id=1562413495]
 layout_mode = 2

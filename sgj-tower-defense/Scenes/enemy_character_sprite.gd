@@ -93,7 +93,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _on_enemy_death() -> void:
 	gameScene.enemies -= 1
 	gameScene.killCounter += 1
-	print("KIllcount: " + str(gameScene.killCounter))
 	#spawn particles
 	var particle = particle_enemy_deathScene.instantiate()
 	get_tree().current_scene.add_child(particle)
