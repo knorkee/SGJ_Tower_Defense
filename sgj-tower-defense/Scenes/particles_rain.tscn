@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bmhiv188vvkwa"]
+
+[node name="particles_rain" type="CPUParticles2D" unique_id=842520337]
+position = Vector2(-1, -59)
+amount = 85
+emission_shape = 3
+emission_rect_extents = Vector2(320, 0)
+gravity = Vector2(-300, 980)
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+color = Color(0.5610675, 0.57024014, 0.9758168, 1)

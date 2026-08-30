@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://d3voi6tlwl6c7" path="res://Scenes/ui_game.gd" id="7_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://sf8q8pf2w3qt" path="res://Assets/player/Background.png" id="9_ikfsv"]
 [ext_resource type="AudioStream" uid="uid://ju372rejer2p" path="res://Assets/music/game_loop.wav" id="10_5dgvu"]
+[ext_resource type="PackedScene" uid="uid://bmhiv188vvkwa" path="res://Scenes/particles_rain.tscn" id="11_uscyt"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_pkquq"]
 
@@ -77,6 +78,11 @@ texture = ExtResource("9_ikfsv")
 stream = ExtResource("10_5dgvu")
 volume_db = -10.0
 autoplay = true
+
+[node name="particles_rain" parent="." unique_id=842520337 instance=ExtResource("11_uscyt")]
+position = Vector2(319, -1)
+amount = 45
+color = Color(0.5947792, 0.5947792, 0.5947792, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="NextWaveButton" to="." method="_on_next_wave_button_pressed"]
