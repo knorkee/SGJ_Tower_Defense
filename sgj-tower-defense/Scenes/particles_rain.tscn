@@ -4,7 +4,7 @@
 position = Vector2(-1, -59)
 amount = 85
 emission_shape = 3
-emission_rect_extents = Vector2(320, 0)
+emission_rect_extents = Vector2(400, 0)
 gravity = Vector2(-300, 980)
 scale_amount_min = 2.0
 scale_amount_max = 3.0

@@ -10,10 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_try_again_pressed() -> void:
+func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/game_scene.tscn")
-	
+
 
 func _on_quit_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

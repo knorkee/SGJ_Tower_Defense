@@ -2,7 +2,7 @@ extends Node2D
 @onready var enemy_spawner_right: Node2D = $enemy_spawner_right
 @onready var enemy_spawner_left: Node2D = $enemy_spawner_left
 @onready var enemy_spawner_top: Node2D = $enemy_spawner_top
-@onready var next_wave_button: Control = $NextWaveButton
+@onready var next_wave_button: TextureButton = $NextWaveButton
 @onready var game_over_screen: Node2D = $GameOverScreen
 
 
@@ -13,6 +13,7 @@ var enemies: int =  0
 var game_lost: bool = false
 var game_won: bool = false
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	_prepareEnemies()
 	next_wave_button.visible = false

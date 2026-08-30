@@ -4,8 +4,11 @@
 [ext_resource type="Script" uid="uid://b8f2w5xiwcofb" path="res://Scenes/main_menu.gd" id="1_48xlc"]
 [ext_resource type="AudioStream" uid="uid://f2yjiq42qlb2" path="res://Assets/music/main_menu.wav" id="3_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://cx7o4w3lpiixn" path="res://Assets/ui/buttons/start_btn.png" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://0gu6sf3gfdu5" path="res://Assets/ui/buttons/start_btn_pressed.png" id="4_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://dvfpv1jq4raxr" path="res://Assets/ui/buttons/options_btn.png" id="4_opfnp"]
 [ext_resource type="Texture2D" uid="uid://d1li3wlyx3b6e" path="res://Assets/ui/buttons/quit_btn.png" id="5_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://cjlrp4xp37s30" path="res://Assets/ui/buttons/options_btn_pressed.png" id="6_trj04"]
+[ext_resource type="Texture2D" uid="uid://1oj1shl10h1h" path="res://Assets/ui/buttons/quit_btn_pressed.png" id="8_16hvj"]
 
 [node name="Main Menu" type="Node2D" unique_id=1739704012]
 script = ExtResource("1_48xlc")
@@ -27,18 +30,22 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 texture_normal = ExtResource("3_ce3w2")
+texture_pressed = ExtResource("4_cp0ys")
 
 [node name="options" type="TextureButton" parent="VBoxContainer" unique_id=1050895362]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+disabled = true
 texture_normal = ExtResource("4_opfnp")
+texture_pressed = ExtResource("6_trj04")
 
 [node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=1170359486]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 texture_normal = ExtResource("5_cp0ys")
+texture_pressed = ExtResource("8_16hvj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1037528080]
 stream = ExtResource("3_1ehe0")

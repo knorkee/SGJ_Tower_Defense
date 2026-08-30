@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://miboxxvrxndp"]
+
+[ext_resource type="Texture2D" uid="uid://b8qb7o5owtqp8" path="res://Assets/ui/control_info/controls_key_1.png" id="1_ffnw4"]
+[ext_resource type="Texture2D" uid="uid://b6vihxa2srwhm" path="res://Assets/player/player_S_F_0.png" id="1_lw34d"]
+[ext_resource type="Texture2D" uid="uid://bu1enrf0ai35j" path="res://Assets/ui/control_info/controls_key_spaceMouse.png" id="2_i7lls"]
+
+[node name="controlsScreen" type="Node2D" unique_id=887684263]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=710279057]
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2114147361]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=995644416]
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("1_ffnw4")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1336711547]
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("2_i7lls")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1858686846]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=882503880]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "AoE Attack"
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=836736524]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Auto Attack"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=957518118]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3" unique_id=125001840]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_lw34d")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=604567679]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Bewegen"

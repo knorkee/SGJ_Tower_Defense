@@ -3,12 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dhig5mk27sam3" path="res://Scenes/momi_character.tscn" id="1_6h5vk"]
 [ext_resource type="Script" uid="uid://bv8gyq4myw1va" path="res://Scenes/game_scene.gd" id="1_fiftr"]
 [ext_resource type="PackedScene" uid="uid://bqkg3w4ykeeeg" path="res://Scenes/player_character.tscn" id="1_x87qo"]
-[ext_resource type="PackedScene" uid="uid://bbdty5ys5q3u" path="res://Scenes/nextWaveButton.tscn" id="2_7iton"]
 [ext_resource type="PackedScene" uid="uid://docs5nmbr8sfn" path="res://Scenes/enemy_spawner.tscn" id="2_fiftr"]
 [ext_resource type="PackedScene" uid="uid://duqvniq1yqos5" path="res://Scenes/game_logic.tscn" id="5_1ixah"]
 [ext_resource type="PackedScene" uid="uid://bnrj6hqmy5ppl" path="res://Scenes/ui_game.tscn" id="6_rgj8m"]
 [ext_resource type="Script" uid="uid://d3voi6tlwl6c7" path="res://Scenes/ui_game.gd" id="7_2fmhe"]
+[ext_resource type="Texture2D" uid="uid://cd3cjx0o8u1ex" path="res://Assets/ui/buttons/nextWave_btn.png" id="8_4xiap"]
 [ext_resource type="Texture2D" uid="uid://sf8q8pf2w3qt" path="res://Assets/player/Background.png" id="9_ikfsv"]
+[ext_resource type="Texture2D" uid="uid://c7bbvx21v2pwi" path="res://Assets/ui/buttons/nextWave_btn_pressed.png" id="9_wywco"]
 [ext_resource type="AudioStream" uid="uid://ju372rejer2p" path="res://Assets/music/game_loop.wav" id="10_5dgvu"]
 [ext_resource type="PackedScene" uid="uid://bmhiv188vvkwa" path="res://Scenes/particles_rain.tscn" id="11_uscyt"]
 [ext_resource type="PackedScene" uid="uid://c2sluqrqp618x" path="res://Scenes/GameOverScreen.tscn" id="12_4xiap"]
@@ -59,11 +60,12 @@ autostart = true
 script = ExtResource("7_2fmhe")
 player = NodePath("../PlayerCharacter")
 
-[node name="NextWaveButton" parent="." unique_id=303992523 instance=ExtResource("2_7iton")]
-offset_left = 259.0
-offset_top = -0.5
-offset_right = 351.0
-offset_bottom = 30.5
+[node name="NextWaveButton" type="TextureButton" parent="." unique_id=54011549]
+offset_left = 272.0
+offset_right = 357.0
+offset_bottom = 40.0
+texture_normal = ExtResource("8_4xiap")
+texture_pressed = ExtResource("9_wywco")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=574442717]
 texture = SubResource("ImageTexture_pkquq")
@@ -81,7 +83,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="particles_rain" parent="." unique_id=842520337 instance=ExtResource("11_uscyt")]
-position = Vector2(319, -1)
+position = Vector2(356, -2)
 amount = 45
 color = Color(0.5947792, 0.5947792, 0.5947792, 1)
 
