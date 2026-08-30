@@ -21,6 +21,10 @@ var aoe_preview_active : bool = false
 var aoe_cooldown : float = 3
 var aoe_cd_counter : float = 0
 
+#kamiGatze Stuff
+var kamiGatze_ready : bool = true
+@export var KamiGatzeScene : PackedScene
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gameScene = get_tree().get_first_node_in_group("gameScene")
@@ -102,7 +106,6 @@ func inputs():
 			aoe_attack = AoE_Attack_Scene.instantiate()
 			aoe_attack.damage = 100 # set damage to be dealt
 			get_tree().current_scene.add_child(aoe_attack)
-	
 	if (Input.is_action_just_released("ability_1")): # aoe released = activated
 		
 		if (aoe_preview_active):
@@ -110,6 +113,13 @@ func inputs():
 			aoe_attack.activate_attack()
 			#reset cooldown
 			aoe_cd_counter = aoe_cooldown
+	
+	# Kami Gatze Ability
+	if (Input.is_action_pressed("ability_2") && kamiGatze_ready):
+		var kamiGatze = KamiGatzeScene.instantiate()
+		kamiGatze.position = global_position
+		get_tree().current_scene.add_child(kamiGatze)
+		kamiGatze_ready = false
 
 func _on_player_death() -> void:
 	queue_free()

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bcm3tok77d1hn" path="res://Scenes/ao_e_attack.tscn" id="3_ck4qn"]
 [ext_resource type="Texture2D" uid="uid://b6vihxa2srwhm" path="res://Assets/player/player_S_F_0.png" id="3_o0f8b"]
 [ext_resource type="Texture2D" uid="uid://jdaxubwlc5yj" path="res://Assets/player/Player_attack/player_atck_F0000.png" id="4_a1rxb"]
+[ext_resource type="PackedScene" uid="uid://b6ornn3ubangw" path="res://Scenes/kami_gatze.tscn" id="5_0oa0h"]
 [ext_resource type="Texture2D" uid="uid://d2v0v4uk1fbgl" path="res://Assets/player/Player_attack/player_atck_F0001.png" id="5_i0ilm"]
 [ext_resource type="Texture2D" uid="uid://bwad06qop0yja" path="res://Assets/player/Player_attack/player_atck_F0002.png" id="6_xeb05"]
 [ext_resource type="Texture2D" uid="uid://bby52soqosimq" path="res://Assets/player/Player_attack/player_atck_F0003.png" id="7_8u1ju"]
@@ -41,7 +42,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_o0f8b")
 }],
-"loop": 0,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -91,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_wfjhv")
 }],
-"loop": 0,
+"loop": false,
 "name": &"player_attack",
 "speed": 20.0
 }, {
@@ -123,7 +124,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_nu5ed")
 }],
-"loop": 0,
+"loop": false,
 "name": &"player_walk",
 "speed": 15.0
 }]
@@ -134,6 +135,7 @@ ProjectileScene = ExtResource("2_o0f8b")
 AoE_Attack_Scene = ExtResource("3_ck4qn")
 Health_Component = NodePath("HealthComponent")
 particle_shootScene = ExtResource("30_uchij")
+KamiGatzeScene = ExtResource("5_0oa0h")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1053495018]
 script = ExtResource("28_j5y83")

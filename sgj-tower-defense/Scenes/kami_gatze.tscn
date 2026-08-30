@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b6ornn3ubangw"]
+
+[ext_resource type="Texture2D" uid="uid://ba3ub5efja0bi" path="res://Assets/AoE_Attack/transparentCircle.png" id="1_blebv"]
+[ext_resource type="Script" uid="uid://bn8snyk7pg5sv" path="res://Scenes/kami_gatze.gd" id="1_ofdbn"]
+[ext_resource type="PackedScene" uid="uid://cab27xnbhbccu" path="res://Scenes/hit_indicator.tscn" id="2_b3pll"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dletk"]
+
+[node name="KamiGatze" type="Area2D" unique_id=972013888]
+script = ExtResource("1_ofdbn")
+hit_indicatorScene = ExtResource("2_b3pll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=943048435]
+shape = SubResource("CircleShape2D_dletk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1640186786]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_blebv")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
