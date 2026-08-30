@@ -11,6 +11,8 @@ var gameScene
 
 @export var Health_Component: HealthComponent
 @export var particle_enemy_deathScene: PackedScene
+@export var hit_indicatorScene: PackedScene
+
 
 func _ready():
 	mommy = get_tree().get_first_node_in_group("mommy")
@@ -49,6 +51,7 @@ func _move(target: Vector2) -> void:
 	var direction = target - global_position
 	direction = direction.normalized()
 	position = position + direction
+	
 func _attack(player: Node2D) -> void:
 	if (enemy_attack_counter > 0):
 		return
@@ -56,6 +59,13 @@ func _attack(player: Node2D) -> void:
 	health_comp.receive_damage(20)
 	print("attack")
 	enemy_attack_counter = enemy_attack_cooldown
+	
+	#hit indicator
+	var hit_indicator = hit_indicatorScene.instantiate()
+	get_tree().current_scene.add_child(hit_indicator)
+	hit_indicator.initialize(global_position, 20)
+	
+	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
 		is_following = true

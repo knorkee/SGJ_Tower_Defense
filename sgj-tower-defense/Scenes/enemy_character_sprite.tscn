@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bfwvwb8x1xkqt" path="res://Assets/player/Enemy_walk/enemy_walk0006.png" id="8_f0phb"]
 [ext_resource type="Texture2D" uid="uid://bbfdwfcnm1b1i" path="res://Assets/player/Enemy_walk/enemy_walk0007.png" id="9_unaw3"]
 [ext_resource type="Script" uid="uid://cyhbf00q13eih" path="res://Scenes/health_component.gd" id="10_xaqgc"]
+[ext_resource type="PackedScene" uid="uid://cab27xnbhbccu" path="res://Scenes/hit_indicator.tscn" id="11_agyv5"]
 [ext_resource type="PackedScene" uid="uid://cujo7jdr8rgqh" path="res://Scenes/particle_enemy_death.tscn" id="11_uk7qj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pkquq"]
@@ -60,6 +61,7 @@ frame_progress = 0.14831513
 script = ExtResource("2_3bpvh")
 Health_Component = NodePath("HealthComponent")
 particle_enemy_deathScene = ExtResource("11_uk7qj")
+hit_indicatorScene = ExtResource("11_agyv5")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=431317986]
 script = ExtResource("10_xaqgc")
