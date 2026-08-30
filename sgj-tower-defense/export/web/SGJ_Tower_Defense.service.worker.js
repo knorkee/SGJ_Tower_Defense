@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1788098866|20630515997';
+const CACHE_VERSION = '1788099646|21410676380';
 /** @type {string} */
 const CACHE_PREFIX = 'SGJ_Tower_Defens-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
