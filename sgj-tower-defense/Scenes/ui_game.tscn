@@ -33,17 +33,32 @@ size_flags_horizontal = 3
 [node name="dmg" type="Label" parent="box/line_top/stats_box" unique_id=1082173667]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_6w1w1")
-text = "Dmg: 1"
+text = "Dmg:"
+
+[node name="dmg_number" type="Label" parent="box/line_top/stats_box" unique_id=608684856]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "1"
 
 [node name="const" type="Label" parent="box/line_top/stats_box" unique_id=267060562]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_6w1w1")
-text = "const: 1"
+text = "Const:"
+
+[node name="const_number" type="Label" parent="box/line_top/stats_box" unique_id=857706763]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "1"
 
 [node name="floppynes" type="Label" parent="box/line_top/stats_box" unique_id=1865749303]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_6w1w1")
-text = "Floppynes: 1"
+text = "Floppynes:"
+
+[node name="floppynes_number" type="Label" parent="box/line_top/stats_box" unique_id=1625515779]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6w1w1")
+text = "1"
 
 [node name="wave_info" type="Label" parent="box/line_top" unique_id=2046860015]
 layout_mode = 2
