@@ -21,4 +21,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/controls_screen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/credit_menu.tscn")

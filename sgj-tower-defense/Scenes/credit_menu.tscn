@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://drre6onv6lrtp"]
 
-[ext_resource type="Texture2D" uid="uid://bfshipytpm5vr" path="res://Assets/Credits.png" id="1_0e48y"]
-[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="2_epypp"]
+[ext_resource type="Script" uid="uid://v541d278hj2f" path="res://Scenes/creditsmenu.gd" id="1_g8jkj"]
+[ext_resource type="Texture2D" uid="uid://bfshipytpm5vr" path="res://Assets/Credits.png" id="2_tlj3f"]
+[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="3_ule4w"]
 
 [node name="Node2D" type="Node2D" unique_id=1104075237]
+script = ExtResource("1_g8jkj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=511132748]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("1_0e48y")
+texture = ExtResource("2_tlj3f")
 centered = false
 
 [node name="Label" type="Label" parent="." unique_id=17247070]
@@ -17,7 +19,7 @@ offset_left = 27.0
 offset_top = 121.0
 offset_right = 617.0
 offset_bottom = 650.0
-theme_override_fonts/font = ExtResource("2_epypp")
+theme_override_fonts/font = ExtResource("3_ule4w")
 theme_override_font_sizes/font_size = 12
 text = "Game Idea: Kuss
 Game Design: Kuss, Vaku, Jana, Tsuna, Philipp
@@ -39,7 +41,7 @@ offset_left = 335.0
 offset_top = 114.0
 offset_right = 925.0
 offset_bottom = 643.0
-theme_override_fonts/font = ExtResource("2_epypp")
+theme_override_fonts/font = ExtResource("3_ule4w")
 theme_override_font_sizes/font_size = 12
 text = "Gamelogic code: Kuss, Jana, Tsuna
 Finetuning: Philipp
@@ -57,3 +59,13 @@ Involuntary voluntary code review: Tsuna
 Coolest shirt: Jana
 ---------------------------------
 100% slop free!"
+
+[node name="Button" type="Button" parent="." unique_id=223594312]
+offset_left = 25.0
+offset_top = 320.0
+offset_right = 147.0
+offset_bottom = 344.0
+theme_override_fonts/font = ExtResource("3_ule4w")
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
