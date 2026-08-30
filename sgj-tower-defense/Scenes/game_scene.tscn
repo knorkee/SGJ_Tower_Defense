@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bnrj6hqmy5ppl" path="res://Scenes/ui_game.tscn" id="6_rgj8m"]
 [ext_resource type="Script" uid="uid://d3voi6tlwl6c7" path="res://Scenes/ui_game.gd" id="7_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://sf8q8pf2w3qt" path="res://Assets/player/Background.png" id="9_ikfsv"]
+[ext_resource type="AudioStream" uid="uid://ju372rejer2p" path="res://Assets/music/game_loop.wav" id="10_5dgvu"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_pkquq"]
 
@@ -71,6 +72,11 @@ texture_filter = 1
 position = Vector2(320, 180)
 scale = Vector2(2, 2)
 texture = ExtResource("9_ikfsv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1866808291]
+stream = ExtResource("10_5dgvu")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="NextWaveButton" to="." method="_on_next_wave_button_pressed"]
