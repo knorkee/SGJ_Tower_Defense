@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://miboxxvrxndp"]
 
 [ext_resource type="Texture2D" uid="uid://b8qb7o5owtqp8" path="res://Assets/ui/control_info/controls_key_1.png" id="1_ffnw4"]
-[ext_resource type="Texture2D" uid="uid://b6vihxa2srwhm" path="res://Assets/player/player_S_F_0.png" id="1_lw34d"]
+[ext_resource type="Script" uid="uid://b4m3w6q05xk4h" path="res://Scenes/controls_screen.gd" id="1_o5fkp"]
 [ext_resource type="Texture2D" uid="uid://bu1enrf0ai35j" path="res://Assets/ui/control_info/controls_key_spaceMouse.png" id="2_i7lls"]
+[ext_resource type="Texture2D" uid="uid://b34yf21shenip" path="res://Assets/ui/control_info/controls_key_wasd.png" id="3_h8rug"]
+[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="3_vd22l"]
 
 [node name="controlsScreen" type="Node2D" unique_id=887684263]
+script = ExtResource("1_o5fkp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=710279057]
 offset_right = 640.0
@@ -31,11 +34,13 @@ size_flags_vertical = 4
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=882503880]
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("3_vd22l")
 text = "AoE Attack"
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=836736524]
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("3_vd22l")
 text = "Auto Attack"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=957518118]
@@ -46,9 +51,19 @@ size_flags_vertical = 6
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3" unique_id=125001840]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("1_lw34d")
+texture = ExtResource("3_h8rug")
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=604567679]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_vd22l")
 text = "Bewegen"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=726626556]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_vd22l")
+text = "Next ->"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
