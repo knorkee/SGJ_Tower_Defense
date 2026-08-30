@@ -10,16 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://cjlrp4xp37s30" path="res://Assets/ui/buttons/options_btn_pressed.png" id="6_trj04"]
 [ext_resource type="Texture2D" uid="uid://bb04m6i6fd4uo" path="res://Assets/ui/buttons/options_btn_disabled.png" id="7_16hvj"]
 [ext_resource type="Texture2D" uid="uid://1oj1shl10h1h" path="res://Assets/ui/buttons/quit_btn_pressed.png" id="8_16hvj"]
+[ext_resource type="Texture2D" uid="uid://dulfmyigiw5sb" path="res://Assets/Titlescreen.png" id="10_16hvj"]
 
 [node name="Main Menu" type="Node2D" unique_id=1739704012]
 script = ExtResource("1_48xlc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1524719042]
+offset_top = 152.0
 offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 4
+offset_transform_enabled = true
 
 [node name="title" type="Label" parent="VBoxContainer" unique_id=889443555]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -53,6 +57,12 @@ texture_pressed = ExtResource("8_16hvj")
 stream = ExtResource("3_1ehe0")
 volume_db = -15.0
 autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=75281125]
+show_behind_parent = true
+scale = Vector2(2, 2)
+texture = ExtResource("10_16hvj")
+centered = false
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
