@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://sf8q8pf2w3qt" path="res://Assets/player/Background.png" id="9_ikfsv"]
 [ext_resource type="AudioStream" uid="uid://ju372rejer2p" path="res://Assets/music/game_loop.wav" id="10_5dgvu"]
 [ext_resource type="PackedScene" uid="uid://bmhiv188vvkwa" path="res://Scenes/particles_rain.tscn" id="11_uscyt"]
+[ext_resource type="PackedScene" uid="uid://c2sluqrqp618x" path="res://Scenes/GameOverScreen.tscn" id="12_4xiap"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_pkquq"]
 
@@ -83,6 +84,9 @@ autoplay = true
 position = Vector2(319, -1)
 amount = 45
 color = Color(0.5947792, 0.5947792, 0.5947792, 1)
+
+[node name="GameOverScreen" parent="." unique_id=300487262 instance=ExtResource("12_4xiap")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="NextWaveButton" to="." method="_on_next_wave_button_pressed"]

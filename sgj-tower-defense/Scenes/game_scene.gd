@@ -3,6 +3,8 @@ extends Node2D
 @onready var enemy_spawner_left: Node2D = $enemy_spawner_left
 @onready var enemy_spawner_top: Node2D = $enemy_spawner_top
 @onready var next_wave_button: Control = $NextWaveButton
+@onready var game_over_screen: Node2D = $GameOverScreen
+
 
 var enemyCounter: int
 var waveCounter: int = 1
@@ -16,12 +18,13 @@ func _ready() -> void:
 	next_wave_button.visible = false
 func _prepareEnemies() -> void:
 	enemyCounter = waveCounter * 10	
+	
 func _process(delta: float) -> void:
 	if(enemies == 0 && enemyCounter == 0):
 		game_won = true
 	if(game_lost):
 		await sleep(2.0)
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		game_over_screen.show()
 	if(game_won):
 		next_wave_button.visible = true
 		#_spawnWaveButton()

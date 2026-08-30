@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c2sluqrqp618x"]
+
+[ext_resource type="Script" uid="uid://dkhxp211m4n13" path="res://Scenes/game_over_screen.gd" id="1_2emqa"]
+[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="2_6hy6l"]
+
+[node name="GameOverScreen" type="Node2D" unique_id=300487262]
+script = ExtResource("1_2emqa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1231819839]
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="text" type="Label" parent="VBoxContainer" unique_id=507311566]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_6hy6l")
+text = "Game Over!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1022077902]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TryAgain" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1633013988]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_6hy6l")
+text = "Try again"
+
+[node name="Quit" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=971695370]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_6hy6l")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
