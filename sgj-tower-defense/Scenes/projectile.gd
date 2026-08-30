@@ -44,7 +44,7 @@ func _on_area_entered(area: Area2D) -> void:
 			#hit indicator
 			var hit_indicator = hit_indicatorScene.instantiate()
 			get_tree().current_scene.add_child(hit_indicator)
-			hit_indicator.initialize(global_position)
+			hit_indicator.initialize(global_position, 100)
 			
 		
 		queue_free()

@@ -11,10 +11,11 @@ func _process(delta: float) -> void:
 	pass
 
 
-func initialize(Position: Vector2) -> void:
+func initialize(Position: Vector2, Damage: int) -> void:
 	position = Position
-	var target = Vector2(Position.x,Position.y - 30)
+	text = str(Damage)
 	
+	var target = Vector2(Position.x,Position.y - 30)
 	var tween = create_tween()
 	tween.tween_property(get_node("."), "position", target, 1.0 )
 	print("running")
