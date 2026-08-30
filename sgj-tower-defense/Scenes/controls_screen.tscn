@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b4m3w6q05xk4h" path="res://Scenes/controls_screen.gd" id="1_o5fkp"]
 [ext_resource type="Texture2D" uid="uid://bu1enrf0ai35j" path="res://Assets/ui/control_info/controls_key_spaceMouse.png" id="2_i7lls"]
 [ext_resource type="Texture2D" uid="uid://b34yf21shenip" path="res://Assets/ui/control_info/controls_key_wasd.png" id="3_h8rug"]
+[ext_resource type="Texture2D" uid="uid://ce4bv3hjnul25" path="res://Assets/ui/control_info/controls_key_2.png" id="3_lnstd"]
 [ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="3_vd22l"]
 
 [node name="controlsScreen" type="Node2D" unique_id=887684263]
@@ -22,6 +23,11 @@ layout_mode = 2
 size_flags_horizontal = 6
 texture = ExtResource("1_ffnw4")
 
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1534248289]
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("3_lnstd")
+
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1336711547]
 layout_mode = 2
 size_flags_horizontal = 6
@@ -36,6 +42,12 @@ layout_mode = 2
 size_flags_horizontal = 6
 theme_override_fonts/font = ExtResource("3_vd22l")
 text = "AoE Attack"
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=2078729263]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("3_vd22l")
+text = "Kamikaze Attack"
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=836736524]
 layout_mode = 2
