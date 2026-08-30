@@ -11,9 +11,9 @@
 script = ExtResource("1_2emqa")
 
 [node name="background" type="ColorRect" parent="." unique_id=994972878]
-offset_left = 204.0
+offset_left = 157.0
 offset_top = 16.0
-offset_right = 424.0
+offset_right = 481.0
 offset_bottom = 348.0
 color = Color(0.29803923, 0.29803923, 0.29803923, 0.6)
 
@@ -72,6 +72,16 @@ texture_pressed = ExtResource("4_ew8mo")
 layout_mode = 2
 texture_normal = ExtResource("5_jii3q")
 texture_pressed = ExtResource("6_g28uj")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer" unique_id=1562413495]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="text" type="Label" parent="VBoxContainer/HBoxContainer5" unique_id=404725995]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6hy6l")
+text = "Leave your score in the comments!"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/quit" to="." method="_on_quit_pressed"]
