@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://ju372rejer2p" path="res://Assets/music/game_loop.wav" id="10_5dgvu"]
 [ext_resource type="PackedScene" uid="uid://bmhiv188vvkwa" path="res://Scenes/particles_rain.tscn" id="11_uscyt"]
 [ext_resource type="PackedScene" uid="uid://c2sluqrqp618x" path="res://Scenes/GameOverScreen.tscn" id="12_4xiap"]
-[ext_resource type="AudioStream" uid="uid://drpdnq2riud2x" path="res://Assets/music/Saloon5.m4a.wav" id="12_ldntv"]
+[ext_resource type="AudioStream" uid="uid://b6mc5vmtiulq8" path="res://Assets/music/shootsound.wav" id="12_ldntv"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_pkquq"]
 
