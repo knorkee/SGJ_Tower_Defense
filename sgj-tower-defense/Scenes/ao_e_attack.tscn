@@ -1,20 +1,24 @@
 [gd_scene format=3 uid="uid://bcm3tok77d1hn"]
 
 [ext_resource type="Script" uid="uid://bpinqw8y1ktii" path="res://Scenes/ao_e_attack.gd" id="1_bkfvh"]
-[ext_resource type="Texture2D" uid="uid://dvqokq7vbaevq" path="res://Assets/AoE_Attack/temp_asset.png" id="1_dcjl6"]
-[ext_resource type="Texture2D" uid="uid://htxjjkuulslq" path="res://Assets/AoE_Attack/temp_indicator.png" id="3_hy5fw"]
+[ext_resource type="Texture2D" uid="uid://cp2souo2ay3m4" path="res://Assets/ExplodeRing/ExplodeRing0008.png" id="2_bkfvh"]
+[ext_resource type="Texture2D" uid="uid://cnu7v8t2vnqrl" path="res://Assets/ExplodeRing/ExplodeRing0005.png" id="3_hy5fw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dls4w"]
-radius = 28.0
+radius = 39.012817
 
 [node name="AoE_Attack" type="Node2D" unique_id=1715646290]
 script = ExtResource("1_bkfvh")
 
 [node name="preview" type="Sprite2D" parent="." unique_id=612523782]
-texture = ExtResource("1_dcjl6")
+texture_filter = 1
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_bkfvh")
 
 [node name="attack_area" type="Sprite2D" parent="." unique_id=3440191]
 visible = false
+texture_filter = 1
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("3_hy5fw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=490912035]
