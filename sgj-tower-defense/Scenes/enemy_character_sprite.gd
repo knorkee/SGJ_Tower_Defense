@@ -4,6 +4,7 @@ var target: Vector2 = Vector2.ZERO
 var target_mom: Vector2 = Vector2.ZERO
 var target_player: Vector2 = Vector2.ZERO
 var is_following: bool = false
+var show_aggro: bool = false
 var enemy_attack_cooldown : float = 1
 var enemy_attack_counter : float = 0
 var mommy
@@ -37,7 +38,14 @@ func _physics_process(delta):
 				cooldowns(delta)
 				_attack(player)
 			else:
+				if(show_aggro):
+					var hit_indicator = hit_indicatorScene.instantiate()
+					get_tree().current_scene.add_child(hit_indicator)
+					hit_indicator.initialize_text(global_position, "#")
+					show_aggro = false
 				_move(player.position)
+
+				
 	else:
 		gameScene.game_lost = true
 	#if(!is_following):
@@ -67,6 +75,7 @@ func _attack(player: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("player")):
 		is_following = true
+		show_aggro = true
 		target_player = body.position
 		var direction = body.position - global_position
 		direction = direction.normalized()
