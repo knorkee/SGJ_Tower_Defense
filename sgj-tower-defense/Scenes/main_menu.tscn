@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cjlrp4xp37s30" path="res://Assets/ui/buttons/options_btn_pressed.png" id="6_trj04"]
 [ext_resource type="Texture2D" uid="uid://bb04m6i6fd4uo" path="res://Assets/ui/buttons/options_btn_disabled.png" id="7_16hvj"]
 [ext_resource type="Texture2D" uid="uid://1oj1shl10h1h" path="res://Assets/ui/buttons/quit_btn_pressed.png" id="8_16hvj"]
+[ext_resource type="Texture2D" uid="uid://btvbyd7t68h5y" path="res://Assets/ui/buttons/credits_btn.png" id="9_vtepg"]
 [ext_resource type="Texture2D" uid="uid://dulfmyigiw5sb" path="res://Assets/Titlescreen.png" id="10_16hvj"]
 [ext_resource type="Texture2D" uid="uid://cshpd2p6dgu8e" path="res://Assets/ui/buttons/quit_btn_hover.png" id="11_5egv6"]
 
@@ -49,6 +50,13 @@ texture_normal = ExtResource("4_opfnp")
 texture_pressed = ExtResource("6_trj04")
 texture_disabled = ExtResource("7_16hvj")
 
+[node name="credits" type="TextureButton" parent="VBoxContainer" unique_id=1983242888]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("9_vtepg")
+texture_pressed = ExtResource("9_vtepg")
+
 [node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=1170359486]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -71,4 +79,6 @@ centered = false
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

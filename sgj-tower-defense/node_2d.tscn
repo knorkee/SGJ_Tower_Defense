@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://drre6onv6lrtp"]
+
+[ext_resource type="Texture2D" uid="uid://bfshipytpm5vr" path="res://Assets/Credits.png" id="1_0e48y"]
+[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="2_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=1104075237]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=511132748]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_0e48y")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=17247070]
+texture_filter = 1
+offset_left = 27.0
+offset_top = 121.0
+offset_right = 617.0
+offset_bottom = 650.0
+theme_override_fonts/font = ExtResource("2_epypp")
+theme_override_font_sizes/font_size = 12
+text = "Game Idea: Kuss
+Game Design: Kuss, Vaku, Jana, Tsuna, Philipp
+Story: Philipp, Kuss
+Character animation: Vaku
+Particles: Philipp
+Background: Vaku
+Comic: Kuss, Philipp
+UI: Philipp,Kuss 
+Music: Tsuna
+Player code: Jana, Tsuna 
+Enemy code: Kuss, Jana, Philipp, Tsuna
+UI code: Philipp, Kuss
+"
+
+[node name="Label2" type="Label" parent="." unique_id=446619624]
+texture_filter = 1
+offset_left = 335.0
+offset_top = 114.0
+offset_right = 925.0
+offset_bottom = 643.0
+theme_override_fonts/font = ExtResource("2_epypp")
+theme_override_font_sizes/font_size = 12
+text = "Gamelogic code: Kuss, Jana, Tsuna
+Finetuning: Philipp
+Tech support: Tsuna
+Mental support: Bulbasaur, Creeper, Amogus
+Git: Gud once
+Night owl: Kuss, Philipp, Tsuna
+Spit sound: Kuss
+Splorjc sound: Vaku
+Snack provider: Vaku
+ISP: 404
+Plushie havers: Kuss, Vaku
+Button Master: Philipp
+Involuntary voluntary code review: Tsuna
+Coolest shirt: Jana
+---------------------------------
+100% slop free!"
