@@ -25,7 +25,6 @@ func _physics_process(delta):
 			var vector_to_mommy = mommy.position - global_position
 			var distance_to_mommy = vector_to_mommy.length()
 			if(distance_to_mommy < 20):
-				print("bin bei mama")
 				cooldowns(delta)
 				_attack(mommy)
 			else:
@@ -57,7 +56,6 @@ func _attack(player: Node2D) -> void:
 		return
 	var health_comp = player.get_node("HealthComponent")
 	health_comp.receive_damage(20)
-	print("attack")
 	enemy_attack_counter = enemy_attack_cooldown
 	
 	#hit indicator

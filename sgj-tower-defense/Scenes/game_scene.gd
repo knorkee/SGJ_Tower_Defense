@@ -52,14 +52,10 @@ func _on_timer_timeout() -> void:
 			spawnerCounter = _generate_random_number()
 			if(spawnerCounter == 0):
 				enemy_spawner_left._spawnEnemy()
-				print("spawn left")
 			if(spawnerCounter == 1):
 				enemy_spawner_top._spawnEnemy()
-				print("spawn top")
 			if(spawnerCounter == 2):
 				enemy_spawner_right._spawnEnemy()
-				print("spawn right")
-			print(enemyCounter)
 
 
 func _on_next_wave_button_pressed() -> void:

@@ -18,7 +18,6 @@ func initialize(Position: Vector2, Damage: int) -> void:
 	var target = Vector2(Position.x,Position.y - 30)
 	var tween = create_tween()
 	tween.tween_property(get_node("."), "position", target, 1.0 )
-	print("running")
 	if(await tween.finished):
 		tween.kill()
 	queue_free()

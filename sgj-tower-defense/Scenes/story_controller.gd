@@ -16,7 +16,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("attack_button")):
 		_changeStoryPic()
-		print(counter)
 
 func _changeStoryPic() -> void:
 	if(counter == 0):
