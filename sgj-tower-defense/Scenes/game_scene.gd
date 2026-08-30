@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 	if(enemies == 0 && enemyCounter == 0):
 		game_won = true
 	if(game_lost):
-		await sleep(2.0)
 		game_over_screen.show()
 	if(game_won):
 		next_wave_button.visible = true
