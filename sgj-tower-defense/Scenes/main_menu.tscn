@@ -60,6 +60,7 @@ autoplay = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=75281125]
 show_behind_parent = true
+texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("10_16hvj")
 centered = false
