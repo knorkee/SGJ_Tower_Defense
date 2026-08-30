@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	else:
 		texture_progress_bar.value = 0
 	
-	if(player.kamiGatze_ready):
+	if(player and player.kamiGatze_ready):
 		explode_ready.text = "KamiGatze: Ready"
 	else:
 		explode_ready.text = "KamiGatze: Used"
