@@ -17,6 +17,9 @@ var spawnerCounter: int = 0
 var enemies: int =  0
 var game_lost: bool = false
 var game_won: bool = false
+
+var killCounter: int = 0
+var timePassed: float = 0.0
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -26,6 +29,8 @@ func _prepareEnemies() -> void:
 	enemyCounter = waveCounter * 10	
 	
 func _process(delta: float) -> void:
+	timePassed += delta
+	
 	if(enemies == 0 && enemyCounter == 0 && game_won == false):
 		game_won = true
 		
