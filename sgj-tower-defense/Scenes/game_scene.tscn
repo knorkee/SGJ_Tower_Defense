@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bmhiv188vvkwa" path="res://Scenes/particles_rain.tscn" id="11_uscyt"]
 [ext_resource type="PackedScene" uid="uid://c2sluqrqp618x" path="res://Scenes/GameOverScreen.tscn" id="12_4xiap"]
 [ext_resource type="AudioStream" uid="uid://b6mc5vmtiulq8" path="res://Assets/music/shootsound.wav" id="12_ldntv"]
+[ext_resource type="AudioStream" uid="uid://dgvmouoe0g0n1" path="res://Assets/music/deathsound.wav" id="13_w8jfd"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_pkquq"]
 
@@ -86,6 +87,11 @@ autoplay = true
 [node name="AudioStreamPlayerShoot" type="AudioStreamPlayer" parent="." unique_id=774335475]
 stream = ExtResource("12_ldntv")
 volume_db = -10.0
+
+[node name="AudioStreamPlayerDeath" type="AudioStreamPlayer" parent="." unique_id=1684581307]
+stream = ExtResource("13_w8jfd")
+volume_db = -10.0
+pitch_scale = 0.5
 
 [node name="particles_rain" parent="." unique_id=842520337 instance=ExtResource("11_uscyt")]
 position = Vector2(356, -2)
