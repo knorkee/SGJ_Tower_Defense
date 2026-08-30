@@ -2,7 +2,7 @@ extends Area2D
 
 @export var hit_indicatorScene: PackedScene
 
-var expand_speed : float = 1.01
+var expand_speed : float = 1
 var damage : int = 1000
 
 var max_size : float = 100
@@ -15,10 +15,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	expand(delta)
-	
-	# end if max size reached
-	if (scale.length() > max_size):
-		queue_free()
 
 func damage_player():
 	var player = get_tree().get_first_node_in_group("player")
@@ -34,7 +30,13 @@ func damage_player():
 	player_health.receive_damage(to_damage)
 
 func expand(delta : float):
-	scale *= (1 + delta) * expand_speed
+	var collider = get_node("ColliderOfDoom")
+	
+	collider.scale *= (1 + delta) * expand_speed
+	
+	# end if max size reached
+	if (collider.scale.length() > max_size):
+		queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
 	

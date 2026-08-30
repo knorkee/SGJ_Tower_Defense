@@ -3,18 +3,100 @@
 [ext_resource type="Script" uid="uid://bn8snyk7pg5sv" path="res://Scenes/kami_gatze.gd" id="1_ofdbn"]
 [ext_resource type="PackedScene" uid="uid://cab27xnbhbccu" path="res://Scenes/hit_indicator.tscn" id="2_b3pll"]
 [ext_resource type="Texture2D" uid="uid://fyqsu82ho7im" path="res://Assets/AoE_Attack/yellowCircle.png" id="3_b3pll"]
+[ext_resource type="Texture2D" uid="uid://bilkrxhddp0d0" path="res://Assets/ExplodeRing/ExplodeRing0000.png" id="4_m6e5k"]
+[ext_resource type="Texture2D" uid="uid://cjvjte8mdrx3i" path="res://Assets/ExplodeRing/ExplodeRing0001.png" id="5_s821y"]
+[ext_resource type="Texture2D" uid="uid://ccpqeflaerqjb" path="res://Assets/ExplodeRing/ExplodeRing0002.png" id="6_vjy04"]
+[ext_resource type="Texture2D" uid="uid://7krh20111mr7" path="res://Assets/ExplodeRing/ExplodeRing0003.png" id="7_pgnct"]
+[ext_resource type="Texture2D" uid="uid://cdlcp8mx5l3yl" path="res://Assets/ExplodeRing/ExplodeRing0004.png" id="8_k7ufa"]
+[ext_resource type="Texture2D" uid="uid://cnu7v8t2vnqrl" path="res://Assets/ExplodeRing/ExplodeRing0005.png" id="9_yjuqj"]
+[ext_resource type="Texture2D" uid="uid://cggstdk7u0t5w" path="res://Assets/ExplodeRing/ExplodeRing0006.png" id="10_nkkej"]
+[ext_resource type="Texture2D" uid="uid://b4436g5n628cg" path="res://Assets/ExplodeRing/ExplodeRing0007.png" id="11_wi8pm"]
+[ext_resource type="Texture2D" uid="uid://cp2souo2ay3m4" path="res://Assets/ExplodeRing/ExplodeRing0008.png" id="12_07e1b"]
+[ext_resource type="Texture2D" uid="uid://bgh0f4viukis4" path="res://Assets/ExplodeRing/ExplodeRing0009.png" id="13_3o7sw"]
+[ext_resource type="Texture2D" uid="uid://c3bnq2rvs7hdp" path="res://Assets/ExplodeRing/ExplodeRing0010.png" id="14_mjupf"]
+[ext_resource type="Texture2D" uid="uid://uaon8a4plqdd" path="res://Assets/ExplodeRing/ExplodeRing0011.png" id="15_ps1xc"]
+[ext_resource type="Texture2D" uid="uid://byh7k7axgq4hi" path="res://Assets/ExplodeRing/ExplodeRing0012.png" id="16_svqc3"]
+[ext_resource type="Texture2D" uid="uid://b27kwynxq5q0h" path="res://Assets/ExplodeRing/ExplodeRing0013.png" id="17_ortdl"]
+[ext_resource type="Texture2D" uid="uid://0arelwesgrln" path="res://Assets/ExplodeRing/ExplodeRing0014.png" id="18_iy8lq"]
+[ext_resource type="Texture2D" uid="uid://5cmwawkd6r4j" path="res://Assets/ExplodeRing/ExplodeRing0015.png" id="19_q3r6v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dletk"]
+radius = 9.003471
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jruix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m6e5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s821y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vjy04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pgnct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k7ufa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yjuqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nkkej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wi8pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_07e1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3o7sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mjupf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ps1xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_svqc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ortdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_iy8lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q3r6v")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="KamiGatze" type="Area2D" unique_id=972013888]
+scale = Vector2(4, 4)
 script = ExtResource("1_ofdbn")
 hit_indicatorScene = ExtResource("2_b3pll")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=943048435]
+[node name="ColliderOfDoom" type="CollisionShape2D" parent="." unique_id=943048435]
 shape = SubResource("CircleShape2D_dletk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1640186786]
+visible = false
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_b3pll")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1117211177]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_jruix")
+autoplay = "default"
+frame = 15
+frame_progress = 1.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

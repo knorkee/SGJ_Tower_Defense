@@ -115,7 +115,7 @@ func inputs():
 			aoe_cd_counter = aoe_cooldown
 	
 	# Kami Gatze Ability
-	if (Input.is_action_pressed("ability_2") && kamiGatze_ready):
+	if (Input.is_action_just_pressed("ability_2") && kamiGatze_ready):
 		var kamiGatze = KamiGatzeScene.instantiate()
 		kamiGatze.position = global_position
 		get_tree().current_scene.add_child(kamiGatze)
