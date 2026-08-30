@@ -42,7 +42,7 @@ func _physics_process(delta):
 					var hit_indicator = hit_indicatorScene.instantiate()
 					get_tree().current_scene.add_child(hit_indicator)
 					hit_indicator.initialize_text(global_position, "#")
-					show_aggro = false
+					show_aggro = false 
 				_move(player.position)
 
 				

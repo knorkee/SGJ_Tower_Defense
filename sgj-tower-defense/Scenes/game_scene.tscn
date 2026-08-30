@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://ju372rejer2p" path="res://Assets/music/game_loop.wav" id="10_5dgvu"]
 [ext_resource type="PackedScene" uid="uid://bmhiv188vvkwa" path="res://Scenes/particles_rain.tscn" id="11_uscyt"]
 [ext_resource type="PackedScene" uid="uid://c2sluqrqp618x" path="res://Scenes/GameOverScreen.tscn" id="12_4xiap"]
+[ext_resource type="AudioStream" uid="uid://drpdnq2riud2x" path="res://Assets/music/Saloon5.m4a.wav" id="12_ldntv"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_pkquq"]
 
@@ -81,6 +82,10 @@ texture = ExtResource("9_ikfsv")
 stream = ExtResource("10_5dgvu")
 volume_db = -10.0
 autoplay = true
+
+[node name="AudioStreamPlayerShoot" type="AudioStreamPlayer" parent="." unique_id=774335475]
+stream = ExtResource("12_ldntv")
+volume_db = -10.0
 
 [node name="particles_rain" parent="." unique_id=842520337 instance=ExtResource("11_uscyt")]
 position = Vector2(356, -2)

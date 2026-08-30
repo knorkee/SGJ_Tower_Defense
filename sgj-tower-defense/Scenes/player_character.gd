@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_shoot: AudioStreamPlayer = $"../AudioStreamPlayerShoot"
 
 
 @export var ProjectileScene: PackedScene
@@ -47,7 +48,7 @@ func attack() -> void: #can u pls make it so attack can only happen every 20 fra
 	var particle = particle_shootScene.instantiate()
 	get_tree().current_scene.add_child(particle)
 	particle.initialize(get_global_mouse_position(), global_position)
-	
+	audio_stream_player_shoot.play()
 	#reset cooldown
 	projectile_cd_counter = projectile_cooldown
 
