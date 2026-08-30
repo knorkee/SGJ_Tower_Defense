@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cab27xnbhbccu"]
+
+[ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="1_p3ncq"]
+[ext_resource type="Script" uid="uid://be331noe4ptvw" path="res://Scenes/hit_indicator.gd" id="2_4miio"]
+
+[node name="hit_indicator" type="Label" unique_id=1842790125]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_p3ncq")
+text = "100"
+script = ExtResource("2_4miio")

@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var hit_indicatorScene: PackedScene
+
 var projectile_direction: Vector2
 
 var speed = 5
@@ -38,5 +40,11 @@ func _on_area_entered(area: Area2D) -> void:
 		var health = parent_of_area.get_node("HealthComponent")
 		if (health != null):
 			health.receive_damage(100)
+			
+			#hit indicator
+			var hit_indicator = hit_indicatorScene.instantiate()
+			get_tree().current_scene.add_child(hit_indicator)
+			hit_indicator.initialize(global_position)
+			
 		
 		queue_free()
