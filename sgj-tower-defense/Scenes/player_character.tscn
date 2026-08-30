@@ -42,7 +42,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_o0f8b")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -92,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_wfjhv")
 }],
-"loop": false,
+"loop": 0,
 "name": &"player_attack",
 "speed": 20.0
 }, {
@@ -124,7 +124,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_nu5ed")
 }],
-"loop": false,
+"loop": 0,
 "name": &"player_walk",
 "speed": 15.0
 }]
@@ -151,3 +151,7 @@ texture_filter = 1
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_pkquq")
 animation = &"player_walk"
+
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=291089137]
+process_mode = 3
+volume_db = -10.0

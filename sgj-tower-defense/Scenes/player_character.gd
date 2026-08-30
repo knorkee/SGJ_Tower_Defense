@@ -1,7 +1,12 @@
 extends CharacterBody2D
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var audio_stream_player_shoot: AudioStreamPlayer = $"../AudioStreamPlayerShoot"
 
+const DEATHSOUND = preload("res://Assets/music/deathsound.wav")
+const SHOOTSOUND = preload("res://Assets/music/shootsound.wav")
+const DMG = preload("res://Assets/music/dmg.wav")
+
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sfx: AudioStreamPlayer = $SFX
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @export var ProjectileScene: PackedScene
 @export var AoE_Attack_Scene: PackedScene
@@ -29,6 +34,7 @@ var kamiGatze_ready : bool = true
 func _ready() -> void:
 	gameScene = get_tree().get_first_node_in_group("gameScene")
 	Health_Component.connect("health_below_zero", _on_player_death)
+	Health_Component.connect("received_damage", _on_receive_damage)
 	pass # Replace with function body.
 
 
@@ -52,7 +58,9 @@ func attack() -> void: #can u pls make it so attack can only happen every 20 fra
 	var particle = particle_shootScene.instantiate()
 	get_tree().current_scene.add_child(particle)
 	particle.initialize(get_global_mouse_position(), global_position)
-	audio_stream_player_shoot.play()
+	sfx.stream = SHOOTSOUND
+	sfx.pitch_scale = 1.0
+	sfx.play()
 	#reset cooldown
 	projectile_cd_counter = projectile_cooldown
 
@@ -122,4 +130,18 @@ func inputs():
 		kamiGatze_ready = false
 
 func _on_player_death() -> void:
+	if not visible:
+		return
+	visible = false
+	collision_shape_2d.disabled = true
+	set_process(false)
+	sfx.stream = DEATHSOUND
+	sfx.pitch_scale = 0.5
+	sfx.play()
+	await sfx.finished
 	queue_free()
+
+func _on_receive_damage() -> void:
+	sfx.stream = DMG
+	sfx.pitch_scale = 1.8
+	sfx.play()

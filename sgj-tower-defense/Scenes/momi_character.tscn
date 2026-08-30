@@ -82,3 +82,5 @@ animation = &"momSlime_Idle"
 autoplay = "momSlime_Idle"
 frame = 2
 frame_progress = 0.8804663
+
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1990247315]
