@@ -2,6 +2,7 @@ extends Control
 @export var player : Node2D
 @onready var texture_progress_bar: TextureProgressBar = $box/line_bottom/TextureProgressBar
 @onready var wave_info: Label = $box/line_top/wave_info
+@onready var explode_ready: Label = $"box/line_bottom/Explode_ Ready"
 
 # Called when the node enters the scene tree for the first time.
 var health_comp
@@ -21,3 +22,9 @@ func _process(delta: float) -> void:
 		texture_progress_bar.value = health_comp.hitpoints
 	else:
 		texture_progress_bar.value = 0
+	
+	if(player.kamiGatze_ready):
+		explode_ready.text = "KamiGatze: Ready"
+	else:
+		explode_ready.text = "KamiGatze: Used"
+	
