@@ -3,6 +3,9 @@
 [ext_resource type="FontFile" uid="uid://dvg4mm8cypsls" path="res://Assets/fonts/Bagura Font Pack v1.5/Occular.ttf" id="1_28flt"]
 [ext_resource type="Script" uid="uid://b8f2w5xiwcofb" path="res://Scenes/main_menu.gd" id="1_48xlc"]
 [ext_resource type="AudioStream" uid="uid://f2yjiq42qlb2" path="res://Assets/music/main_menu.wav" id="3_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://cx7o4w3lpiixn" path="res://Assets/ui/buttons/start_btn.png" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://dvfpv1jq4raxr" path="res://Assets/ui/buttons/options_btn.png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://d1li3wlyx3b6e" path="res://Assets/ui/buttons/quit_btn.png" id="5_cp0ys"]
 
 [node name="Main Menu" type="Node2D" unique_id=1739704012]
 script = ExtResource("1_48xlc")
@@ -19,27 +22,23 @@ size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("1_28flt")
 text = "Once upon a slime"
 
-[node name="start" type="Button" parent="VBoxContainer" unique_id=1232368823]
+[node name="start" type="TextureButton" parent="VBoxContainer" unique_id=1167404018]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_28flt")
-text = "Start"
+texture_normal = ExtResource("3_ce3w2")
 
-[node name="options" type="Button" parent="VBoxContainer" unique_id=840652528]
+[node name="options" type="TextureButton" parent="VBoxContainer" unique_id=1050895362]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_28flt")
-disabled = true
-text = "Options"
+texture_normal = ExtResource("4_opfnp")
 
-[node name="quit" type="Button" parent="VBoxContainer" unique_id=1284664575]
+[node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=1170359486]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_fonts/font = ExtResource("1_28flt")
-text = "Quit"
+texture_normal = ExtResource("5_cp0ys")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1037528080]
 stream = ExtResource("3_1ehe0")

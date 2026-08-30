@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d26wuig68u5ku"
-path="res://.godot/imported/QuitBut.png-86935ba69c096536a53341f77cae6b05.ctex"
+uid="uid://cd3cjx0o8u1ex"
+path="res://.godot/imported/nextWave_btn.png-93a4fae51ed6ed0074984bc18450a09a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/buttons/QuitBut.png"
-dest_files=["res://.godot/imported/QuitBut.png-86935ba69c096536a53341f77cae6b05.ctex"]
+source_file="res://Assets/ui/buttons/nextWave_btn.png"
+dest_files=["res://.godot/imported/nextWave_btn.png-93a4fae51ed6ed0074984bc18450a09a.ctex"]
 
 [params]
 
